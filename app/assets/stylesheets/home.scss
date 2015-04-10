@@ -3,8 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $headers: #195962;
+$overlay_bg: #252932;
+$overlay_bg_hover: #191C21;
+$offwhite: #DFE5CE;
 $highlights: #F56F6C;
-$overlay_bg_hover: #252932;
 
 html, body {
 	font-size: 16px;
@@ -15,8 +17,7 @@ html, body {
 }
 
 .top-bar-section .dropdown li a {
-	border-top: 1px solid $overlay_bg_hover;
-	font-size: .8em;
+	border-top: 1px solid #555;
 }
 
 .right ul {
@@ -55,9 +56,9 @@ h1, h2 {
 }
 
 .footer {
-	background-color: $headers;
+	background-color: $overlay_bg;
 	height: 200px;
-	color: white;
+	color: #fff;
 }
 
 .page {

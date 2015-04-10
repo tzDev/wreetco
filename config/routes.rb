@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+	match "/contact", to: "contact#index", :via => 'get'
+	match "/about", to: "about#index", :via => 'get'
+
   resources :blog_posts, :path => 'blog'
 
   get 'home/index'
