@@ -14,7 +14,7 @@ html, body {
 }
 
 .top-bar .name h1 a:hover {
-	background-color: transparent!important;
+	background-color: transparent;
 }
 
 .top_contrast {
@@ -22,11 +22,7 @@ html, body {
 }
 
 .top-bar-section .dropdown li a {
-	border-top: 1px solid $overlay_bg;
-}
-
-.top-bar-section .dropdown li a:first-child {
-	border-top: 0px;
+	border-bottom: 1px solid $overlay_bg;
 }
 
 .right ul {
