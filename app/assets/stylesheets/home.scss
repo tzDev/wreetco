@@ -4,12 +4,17 @@
 
 $headers: #195962;
 $overlay_bg: #252932;
-$overlay_bg_hover: #191C21;
 $offwhite: #DFE5CE;
 $highlights: #F56F6C;
+$text: #191C21;
 
 html, body {
-	font-size: 16px;
+	//font-size: 16px;
+	font-color: $text;
+}
+
+.top-bar .name h1 a:hover {
+	background-color: transparent!important;
 }
 
 .top_contrast {
@@ -17,7 +22,11 @@ html, body {
 }
 
 .top-bar-section .dropdown li a {
-	border-top: 1px solid #555;
+	border-top: 1px solid $overlay_bg;
+}
+
+.top-bar-section .dropdown li a:first-child {
+	border-top: 0px;
 }
 
 .right ul {
@@ -56,7 +65,7 @@ h1, h2 {
 }
 
 .footer {
-	background-color: $overlay_bg;
+	background-color: $headers;
 	height: 200px;
 	color: #fff;
 }
