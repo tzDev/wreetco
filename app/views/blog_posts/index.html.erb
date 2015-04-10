@@ -1,0 +1,11 @@
+<div class="page row">
+	<div class="small-8 column">
+		<% @blog_posts.to_a.each() do |post| %>
+			<%= render 'post', :post => post %>
+			
+		<% end %>
+	</div>
+	<div class="small-4 column show-for-medium-up">
+		sidebar 
+	</div>
+</div>

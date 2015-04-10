@@ -1,0 +1,71 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$headers: #195962;
+$highlights: #F56F6C;
+$overlay_bg_hover: #252932;
+
+html, body {
+	font-size: 16px;
+}
+
+.top_contrast {
+	background: $headers;
+}
+
+.top-bar-section .dropdown li a {
+	border-top: 1px solid $overlay_bg_hover;
+	font-size: .8em;
+}
+
+.right ul {
+	border-top: 2px solid $highlights
+}
+
+.parent-link .js-generated {
+	display: none !important;
+}
+
+h1, h2 {
+	color: $headers;
+	padding: 0px;
+	margin: 0px;
+}
+
+.slider_container {
+	margin-top: 1em;
+}
+
+.splash_slider {
+	//background: $headers;
+	//color: #fff;
+}
+
+.splash_description h1, h2, h3 {
+	color: $headers;
+}
+
+.splash_description p {
+	text-align: justify;
+}
+
+.right {
+	float: right;
+}
+
+.footer {
+	background-color: $headers;
+	height: 200px;
+	color: white;
+}
+
+.page {
+	//padding: 1em;
+}
+
+.gist {
+	margin-top: 0.5em;
+	max-height: 65vh;
+	overflow: hidden;
+}
