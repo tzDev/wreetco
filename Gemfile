@@ -16,7 +16,7 @@ gem 'mongoid', '~> 4', github: 'mongoid/mongoid'
 gem 'bson_ext'
 gem 'thin'
 gem 'mongo'
-gem 'mongoid-tree'
+#gem 'mongoid-tree'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
