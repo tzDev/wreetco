@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
-	match "/contact", to: "contact#index", :via => 'get'
-	match "/about", to: "about#index", :via => 'get'
+  get 'project/index'
 
+	match "/about", to: "about#index", :via => 'get'
+	match "/project", to: "project#index", :via => 'get'
+	match "/project/list", to: "project#getProjects", :via => 'get'
+
+
+	resources :contact
   resources :blog_posts, :path => 'blog'
+
 
   get 'home/index'
 

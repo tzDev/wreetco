@@ -1,0 +1,17 @@
+<div ng-app="projectApp" class="row page" ng-controller="ProjectCtrl">
+	<div class="medium-3 columns">
+		<ul class="side-nav">
+			<li><a ng-href="project#{{ project.url }}/description">Description</a></li>
+			<li><a ng-href="project#{{ project.url }}/news">News</a></li>
+			<li><a ng-href="project#{{ project.url }}/docs">Documentation</a></li>
+			<li ng-show="project.category == 'App' ? true : false"><a ng-href="">App Store Links</a></li>
+			<li><a href="{{project.links.github}}" target="_blank">Github</a></li>
+		</ul>
+	</div>
+	<div class="medium-9 columns">
+		<ng-view></ng-view>
+	</div>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
+<script src="/assets/project_app/app.js"></script>

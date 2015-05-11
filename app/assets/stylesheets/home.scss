@@ -61,7 +61,7 @@ h1, h2 {
 }
 
 .footer {
-	background-color: $headers;
+	background-color: $overlay_bg;
 	height: 200px;
 	color: #fff;
 }
@@ -74,4 +74,17 @@ h1, h2 {
 	margin-top: 0.5em;
 	max-height: 65vh;
 	overflow: hidden;
+}
+
+.page a {
+	color: $headers !important;
+}
+
+.page a:hover {
+	background-color: transparent;
+	border-bottom: 1px solid $highlights;
+}
+
+.post_body {
+	margin-top: 1em;
 }

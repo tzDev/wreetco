@@ -1,2 +1,82 @@
-<h1>Contact#index</h1>
-<p>Find me in app/views/contact/index.html.erb</p>
+<div class="row" style="min-height: 80vh;">
+	<div class="columns medium-5 small-12">
+		<h1>Contact</h1>
+		<p>
+			Ready to get started, or do you just have a few questions? 
+		</p>
+		<p>
+			Please fill out the form and let us know how we may help you!
+			We'll be sure to get back to you within 1-2 business days.
+		</p>
+		<p>
+			If this request is urgent or you need assistance immediately, 
+			please email us at info@wreet.co and we'll get in touch with you as soon 
+			as possible. 
+		</p>
+	</div><!-- end left -->
+	<!-- right column -->
+	<div class="columns medium-7 small-12">
+		<div class="contact_form">
+			<form name="contact_form" action="/contact/send" method="post">
+				<div class="row">
+					<div class="small-12 medium-6 columns">
+						<label>First Name
+							<input type="text" placeholder="First name" name="last_name" />
+						</label>
+					</div>
+					<div class="small-12 medium-6 columns">
+						<label>Last Name
+							<input type="text" placeholder="Last name" name="first_name" />
+						</label>				
+					</div>
+				</div>
+				<!-- next row -->
+				<div class="row">
+					<div class="small-12 columns">
+						<label>
+							Email
+							<input type="text" placeholder="Email" name="email" />
+						</label>
+					</div>
+				</div>
+				<!-- next row -->
+				<div class="row">
+					<div class="small-12 column">
+						<label>Subject
+							<select name="subject">
+								<option>---</option>
+								<option>Web Development</option>
+								<option>App Development</option>
+								<option>Software Development</option>
+								<option>Consulting</option>
+								<option>Technical Support</option>
+								<option>Support</option>
+								<option>General/Other</option>
+							</select>
+						</label>
+					</div>
+				</div>
+				<!-- next row -->
+				<div class="row">
+					<div class="small-12 columns">
+						<label>Message
+							<textarea placeholder="Message" id="message" rows="5"></textarea>
+						</label>
+					</div>
+				</div>
+				<!-- submit row -->
+				<div class="row">
+					<div class="small-12 columns text-center">
+						<input type="submit" class="button success" value="Send" />
+					</div>
+				</div>
+			</form>
+		</div><!-- end contact form -->
+	</div><!-- end right column -->
+</div><!-- end row -->
+
+
+
+
+
+
