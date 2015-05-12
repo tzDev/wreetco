@@ -17,60 +17,47 @@
 	<!-- right column -->
 	<div class="columns medium-7 small-12">
 		<div class="contact_form">
-			<form name="contact_form" action="/contact/send" method="post">
+			<%= form_for :contact do |f| %>
 				<div class="row">
 					<div class="small-12 medium-6 columns">
-						<label>First Name
-							<input type="text" placeholder="First name" name="last_name" />
-						</label>
+						<%= f.label :first_name %>
+						<%= f.text_field :first_name, :placeholder => 'First name' %>
 					</div>
 					<div class="small-12 medium-6 columns">
-						<label>Last Name
-							<input type="text" placeholder="Last name" name="first_name" />
-						</label>				
+						<%= f.label :last_name %>
+						<%= f.text_field :last_name, :placeholder => 'Last name' %>			
 					</div>
 				</div>
 				<!-- next row -->
 				<div class="row">
 					<div class="small-12 columns">
-						<label>
-							Email
-							<input type="text" placeholder="Email" name="email" />
-						</label>
+						<%= f.label :email %>
+						<%= f.text_field :email, :placeholder => 'Email' %>
 					</div>
 				</div>
 				<!-- next row -->
 				<div class="row">
 					<div class="small-12 column">
-						<label>Subject
-							<select name="subject">
-								<option>---</option>
-								<option>Web Development</option>
-								<option>App Development</option>
-								<option>Software Development</option>
-								<option>Consulting</option>
-								<option>Technical Support</option>
-								<option>Support</option>
-								<option>General/Other</option>
-							</select>
-						</label>
+						<%= f.label :subject %>
+						<%= select_tag("subject", options_for_select(['---','Web Development','App Development','Software Development','Consulting','Support','General/Other'])) %>
 					</div>
 				</div>
 				<!-- next row -->
 				<div class="row">
 					<div class="small-12 columns">
-						<label>Message
-							<textarea placeholder="Message" id="message" rows="5"></textarea>
-						</label>
+						<%= f.label :message %>
+						<%= f.text_area :message, :placeholder => 'Message', :rows => 5 %>
 					</div>
 				</div>
 				<!-- submit row -->
 				<div class="row">
 					<div class="small-12 columns text-center">
-						<input type="submit" class="button success" value="Send" />
+						<!--<input type="submit" class="button success" value="Send" />-->
+						<%= submit_tag "Send", :class => "button success" %>
+						
 					</div>
 				</div>
-			</form>
+			<% end %>
 		</div><!-- end contact form -->
 	</div><!-- end right column -->
 </div><!-- end row -->
