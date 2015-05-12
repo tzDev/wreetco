@@ -3,6 +3,6 @@ class ContactController < ApplicationController
   end
 	
 	def create
-		
+		ContactMailer.contact_email(params[:contact]).deliver_now;
 	end
 end

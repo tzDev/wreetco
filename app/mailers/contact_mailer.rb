@@ -3,7 +3,9 @@ class ContactMailer < ApplicationMailer
 
 	def contact_email(inquiry)
 		@inquiry = inquiry;
-		mail(to: "chase@wreet.co", subject: "New inquiry from: #{inquiry[:inquirer]}");
+		puts "inquiry";
+		puts @inquiry;
+		mail(:to => "chase@wreet.co", :subject => "New inquiry from: #{@inquiry[:first_name]}");
 	end; # end contact email
 
 
