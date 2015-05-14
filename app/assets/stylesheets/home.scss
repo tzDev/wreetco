@@ -43,6 +43,32 @@ h1, h2 {
 	margin-top: 1em;
 }
 
+.splash {
+	min-height: 80vh;
+	padding: 5em 0;
+}
+
+.splash-third {
+	background-color: #333;
+	color: #fff;
+}
+
+.splash-first {
+	background-color: $overlay_bg;
+	color: #fff;
+}
+
+.splash-second {
+	background-color: #29909f;
+	color: #fff;
+}
+
+.splash h1 {
+	color: #fff !important;
+	text-transform: uppercase;
+	font-size: 2.5em;
+}
+
 .splash_slider {
 	//background: $headers;
 	//color: #fff;
@@ -52,7 +78,9 @@ h1, h2 {
 	color: $headers;
 }
 
-.splash_description p {
+.splash_message {
+	padding: 0.5em; 
+	line-height: 1.5em;	
 	text-align: justify;
 }
 
@@ -74,6 +102,13 @@ h1, h2 {
 	margin-top: 0.5em;
 	max-height: 65vh;
 	overflow: hidden;
+}
+
+.full-width {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
 }
 
 .page a {
