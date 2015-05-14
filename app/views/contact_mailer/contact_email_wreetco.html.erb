@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css' />
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		
+		html, body {
+			font-family: Roboto, sans-serif;
+			color: #ddd;
+			background-color: #222;
+		}
+		
+		.mail {
+			padding: 1em;	
+		}
+		
+		p {
+			margin: .5em 0;	
+		}
+	</style>
+</head>
+<body>
+	<div class="mail">
+		<h1><%= @inquiry[:subject] %></h1>
+		<p class="inquirer">
+			<%= @inquiry[:first_name] + " " + @inquiry[:last_name] %>
+			<br />
+			<%= @inquiry[:email] %>
+			<br />
+			<%= @inquiry[:submitted] %>
+		</p>
+		<p class="message">
+			<%= @inquiry[:message] %>
+		</p>
+	</div>
+</body>
+</html>
