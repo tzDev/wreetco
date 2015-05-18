@@ -109,8 +109,33 @@ h1, h2 {
 
 .footer {
 	background-color: $overlay_bg;
-	height: 200px;
-	color: #fff;
+	color: #d7dae1;
+	padding-top: 1em;
+}
+
+.footer .contact_form {
+	padding: 0 !important;
+}
+
+.footer label {
+	color: #d7dae1 !important;
+}
+
+.footer input, .footer select, .footer textarea {
+	background-color: #464e5f;
+	color: #d7dae1;
+	border: none;
+	border-radius: 5px;
+}
+
+.footer h4 {
+	text-transform: uppercase;
+	color: $highlights;
+	font-size: 18px;
+}
+
+.highlight {
+	color: $highlights;
 }
 
 .page {
@@ -141,4 +166,5 @@ h1, h2 {
 
 .post_body {
 	margin-top: 1em;
+	text-align: justify;
 }

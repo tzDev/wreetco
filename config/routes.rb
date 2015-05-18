@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :blog_posts
+
   get 'project/index'
 
 	match "/about", to: "about#index", :via => 'get'

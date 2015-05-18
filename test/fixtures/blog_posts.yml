@@ -1,15 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  posted_date: 2015-04-09 16:04:00
-  body: MyText
-  categories: 
+  title: 
+  posted_date: 
   author: 
+  body: 
+  tags: 
+  project: 
+  published: 
 
 two:
-  title: MyString
-  posted_date: 2015-04-09 16:04:00
-  body: MyText
-  categories: 
+  title: 
+  posted_date: 
   author: 
+  body: 
+  tags: 
+  project: 
+  published: 

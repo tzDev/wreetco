@@ -1,12 +1,12 @@
 class BlogPost
   include Mongoid::Document
-	has_many :category
-
   field :title, type: String
   field :posted_date, type: DateTime
+  field :author, type: String
   field :body, type: String
-  field :categories, type: Array
-  field :author, type: Integer
+  field :tags, type: Array
+  field :project, type: Integer
+  field :published, type: Boolean
+
 	
-	belongs_to :project;
 end

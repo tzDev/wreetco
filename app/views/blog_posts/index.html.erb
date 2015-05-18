@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+
 <div class="page row">
 	<div class="small-8 column">
 		<% @blog_posts.to_a.each() do |post| %>
@@ -9,3 +11,5 @@
 		sidebar 
 	</div>
 </div>
+
+<%= link_to 'New Blog post', new_blog_post_path %>

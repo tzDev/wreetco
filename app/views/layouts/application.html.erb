@@ -28,10 +28,13 @@
 							<a href="#">apps</a>
 							<ul class="dropdown">
 								<li><a href="/project#/weightlogger">Weight Logger</a></li>
+								<!--
 								<li><a href="#">sms sync</a></li>
 								<li><a href="#">wimbl</a></li>
+								-->
 							</ul>
 						</li>
+						<!--
 						<li class="has-dropdown">
 							<a href="#">code</a>
 							<ul class="dropdown">
@@ -39,6 +42,7 @@
 								<li><a href="#">js graphs</a></li>
 							</ul>
 						</li>
+						-->
 					</ul>
 
 					<!-- Left Nav Section -->
@@ -54,7 +58,53 @@
     <%= yield %>
 		<!-- footer content follows -->
 		<div class="footer">
-			hello world
-		</div>
+			<div class="row">
+				<div class="small-12 medium-3 columns">
+					<h4>Get in touch</h4>
+					<%= render '/contact/contact_form' %>
+				</div><!-- end form col -->
+				<div class="small-12 medium-1 columns">
+					&nbsp;
+				</div>
+				<div class="small-12 medium-3 columns">
+					<h4>contact</h4>
+					Want to get in touch directly?
+					<br /><br />
+					<span class="highlight">Email</span><br />
+					info@wreet.co
+					<br />
+					Please allow up to 48 hours for a response.
+					<br /><br />
+					<span class="highlight">Social</span>
+					<div class="row" style="margin-top: 10px;">
+						<div class="columns small-3">
+							<img src="/assets/facebook_icon.png" alt="Facebook" />
+						</div>
+						<div class="columns small-3">
+							<img src="/assets/twitter_icon.png" alt="Twitter" />
+						</div>
+						<div class="columns small-3">
+							<img src="/assets/google_plus_icon.png" alt="Google+" />
+						</div>
+						<div class="columns small-3">
+							<img src="/assets/github_icon.png" alt="Github" />
+						</div>
+					</div>
+				</div>
+				<div class="small-12 medium-1 columns">
+					&nbsp;
+				</div>
+				<div class="small-12 medium-4 columns">
+					<h4>Other Stuff</h4>
+				</div>
+			</div><!-- end row -->
+			<script>
+				// fix the name fields
+				var divs = $('.footer .medium-6');
+				for (var i = 0; i < divs.length; i++) {
+					divs[i].className = "columns small-12";
+				}
+			</script>
+		</div><!-- end footer -->
   </body>
 </html>

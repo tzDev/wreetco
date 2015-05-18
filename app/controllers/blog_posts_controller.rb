@@ -1,6 +1,5 @@
 class BlogPostsController < ApplicationController
   before_action :set_blog_post, only: [:show, :edit, :update, :destroy]
-
   # GET /blog_posts
   # GET /blog_posts.json
   def index
@@ -24,8 +23,9 @@ class BlogPostsController < ApplicationController
   # POST /blog_posts
   # POST /blog_posts.json
   def create
-    @blog_post = BlogPost.new(blog_post_params)
-
+		puts "SDFSDFJSDKFJSKCJSKLDJCSKDJCKSLDCHDJLSHCLJDKSH";
+		params[:blog_post][:tags] = params[:blog_post][:tags].split(',')
+		@blog_post = BlogPost.new(blog_post_params)
     respond_to do |format|
       if @blog_post.save
         format.html { redirect_to @blog_post, notice: 'Blog post was successfully created.' }
@@ -69,6 +69,6 @@ class BlogPostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_post_params
-      params.require(:blog_post).permit(:title, :posted_date, :body, :categories, :author)
+      params.require(:blog_post).permit(:title, :posted_date, :author, :body, :tags, :project, :published)
     end
 end

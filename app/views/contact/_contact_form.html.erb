@@ -1,0 +1,43 @@
+<div class="contact_form">
+	<%= form_for :contact do |f| %>
+		<div class="row">
+			<div class="small-12 medium-6 columns">
+				<%= f.label :first_name %>
+				<%= f.text_field :first_name, :placeholder => 'First name' %>
+			</div>
+			<div class="small-12 medium-6 columns">
+				<%= f.label :last_name %>
+				<%= f.text_field :last_name, :placeholder => 'Last name' %>			
+			</div>
+		</div>
+		<!-- next row -->
+		<div class="row">
+			<div class="small-12 columns">
+				<%= f.label :email %>
+				<%= f.text_field :email, :placeholder => 'Email' %>
+			</div>
+		</div>
+		<!-- next row -->
+		<div class="row">
+			<div class="small-12 column">
+				<%= f.label :subject %>
+				<%= select_tag("contact[subject]", options_for_select(['---','Web Development','App Development','Software Development','Consulting','Support','General/Other'])) %>
+			</div>
+		</div>
+		<!-- next row -->
+		<div class="row">
+			<div class="small-12 columns">
+				<%= f.label :message %>
+				<%= f.text_area :message, :placeholder => 'Message', :rows => 5 %>
+			</div>
+		</div>
+		<!-- submit row -->
+		<div class="row">
+			<div class="small-12 columns text-center">
+				<!--<input type="submit" class="button success" value="Send" />-->
+				<%= submit_tag "Send", :class => "button success" %>
+
+			</div>
+		</div>
+	<% end %>
+</div><!-- end contact form -->
