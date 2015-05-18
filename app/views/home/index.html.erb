@@ -1,5 +1,5 @@
-<div class="row full-width splash splash-first">
-	<div class="small-12 medium-12 columns">
+<div class="row full-width splash splash-first" data-top="background-color: rgb(37,41,50);" data-500="background-color: rgb(41,144,159);">
+	<div class="small-12 medium-12 columns" data-top="opacity:1;" data-500="opacity:0;">
 		<div class="medium-8 small-12 columns">
 			<h1>Mobile first Web</h1>
 			<p class="splash_message">
@@ -19,17 +19,17 @@
 				matter how they choose to interact with your website. 
 			</p>
 		</div>
-		<div class="medium-4 small-12 columns">
-			picture goes here, maybe source<br />
-			or some logos of web technologies 
+		<div class="medium-4 small-12 columns" style="position: relative;">
+			<img src="/assets/responsive.png" alt="responsive web design" style="position: absolute: top: 50%;" />
 		</div>
 	</div>
 </div>
 
-<div class="row full-width splash splash-second">
-	<div class="small-12 medium-12 columns">
+<div class="row full-width splash splash-second" data-500="background-color: rgb(41,144,159);" data-1000="background-color: rgb(51,51,51);">
+	<div class="small-12 medium-12 columns transparent" data-100="opacity:0;" data-300="opacity:1;">
 		<div class="medium-4 small-12 columns">
-			screenshot of app on mobile phone goes here
+			<h3 style="color: #fff;">Real app - try me!</h3>
+			<iframe src="http://localhost:8100" class="app_frame"></iframe>
 		</div>
 		<div class="medium-8 small-12 columns">
 			<h1>Mobile app development</h1>
@@ -49,7 +49,7 @@
 </div>
 
 <div class="row full-width splash splash-third">
-	<div class="small-12 medium-12 columns">
+	<div class="small-12 medium-12 columns" data-800="opacity:0;" data-1000="opacity:1;">
 		<div class="medium-8 small-12 columns">
 			<h1>Technologies</h1>
 			<p class="splash_message">
@@ -66,5 +66,43 @@
 	</div>
 </div>
 
+<div class="row full-width splash splash-fourth">
+	<div class="small-12 medium-12 columns">
+		<div class="medium-7 small-12 columns">
+			&nbsp;
+		</div>
+		<div class="medium-5 small-12 columns">
+			<h1 style="color:#252932;">Clients/Projects</h1>
+		</div>
+	</div>
+	<!-- projects -->
+	<br	style="line-height: 5em;" />
+	<div class="row bordered" style="margin: 1em;">
+		<div class="small-12 medium-3 columns">
+			a
+		</div>
+		<div class="small-12 medium-3 columns">
+			b
+		</div>
+		<div class="small-12 medium-3 columns">
+			c
+		</div>
+		<div class="small-12 medium-3 columns">
+			d
+		</div>
+	</div>
+</div>
 
-<br style="line-height: 500px;" />
+<script>
+	if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
+		skrollr.init({
+			forceHeight: false
+		});
+	}
+</script>
+
+
+
+
+
+
