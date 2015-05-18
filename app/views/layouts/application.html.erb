@@ -47,7 +47,7 @@
 
 					<!-- Left Nav Section -->
 					<ul class="right">
-						<li><%= link_to "blog", controller: "blog_posts", action: "index" %></li>
+						<li><%= link_to "blog", "/blog", controller: "blog_posts", action: "index" %></li>
 						<!--<li><%= link_to "about", controller: "about" %></li>-->
 						<li><li><%= link_to "contact", controller: "contact" %></li></li>
 					</ul>
@@ -68,12 +68,13 @@
 				</div>
 				<div class="small-12 medium-3 columns">
 					<h4>contact</h4>
-					Want to get in touch directly?
+					You can also email us or 
+					find us on social media. 
 					<br /><br />
 					<span class="highlight">Email</span><br />
 					info@wreet.co
 					<br />
-					Please allow up to 48 hours for a response.
+					We'll get back to you as soon as we can. 
 					<br /><br />
 					<span class="highlight">Social</span>
 					<div class="row" style="margin-top: 10px;">
@@ -81,13 +82,17 @@
 							<img src="/assets/facebook_icon.png" alt="Facebook" />
 						</div>
 						<div class="columns small-3">
-							<img src="/assets/twitter_icon.png" alt="Twitter" />
+							<a href="https://twitter.com/tzdev" target="_blank">
+								<img src="/assets/twitter_icon.png" alt="Twitter" />
+							</a>
 						</div>
 						<div class="columns small-3">
 							<img src="/assets/google_plus_icon.png" alt="Google+" />
 						</div>
 						<div class="columns small-3">
-							<img src="/assets/github_icon.png" alt="Github" />
+							<a href="https://github.com/wreetco" target="_blank">
+								<img src="/assets/github_icon.png" alt="Github" />
+							</a>
 						</div>
 					</div>
 				</div>

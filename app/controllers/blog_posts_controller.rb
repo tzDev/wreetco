@@ -23,8 +23,7 @@ class BlogPostsController < ApplicationController
   # POST /blog_posts
   # POST /blog_posts.json
   def create
-		puts "SDFSDFJSDKFJSKCJSKLDJCSKDJCKSLDCHDJLSHCLJDKSH";
-		params[:blog_post][:tags] = params[:blog_post][:tags].split(',')
+		params[:blog_post][:tags] = params[:blog_post][:tags].split(',').map(&:strip)
 		@blog_post = BlogPost.new(blog_post_params)
     respond_to do |format|
       if @blog_post.save
@@ -40,6 +39,7 @@ class BlogPostsController < ApplicationController
   # PATCH/PUT /blog_posts/1
   # PATCH/PUT /blog_posts/1.json
   def update
+		params[:blog_post][:tags] = params[:blog_post][:tags].split(',').map(&:strip)
     respond_to do |format|
       if @blog_post.update(blog_post_params)
         format.html { redirect_to @blog_post, notice: 'Blog post was successfully updated.' }
@@ -69,6 +69,6 @@ class BlogPostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_post_params
-      params.require(:blog_post).permit(:title, :posted_date, :author, :body, :tags, :project, :published)
+      params.require(:blog_post).permit(:title, :posted_date, :author, :body, :project, :published, tags: [])
     end
 end
