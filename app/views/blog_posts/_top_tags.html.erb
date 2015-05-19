@@ -1,0 +1,55 @@
+<div class="top_tags" ng-app="tags" ng-view>
+	<!-- angular yield -->
+</div>
+<!-- include angular for the tags -->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
+<script>
+angular.module("tags", ['ngRoute'])
+// configuration
+.config(['$routeProvider', function($routeProvider) {
+	$routeProvider
+	// / 
+	.when('/', {
+		template: '<h3>Top Tags</h3>' +
+							'<div ng-repeat="(tag, count) in tags">' +
+							'{{tag}}:{{count}}' +
+							'</div>'
+							,
+		controller: 'TagCtrl'
+	});
+}])
+
+.factory('TagService', function($http) {
+	return {
+		getTags: function($scope) {
+			$http.get('/blog.json').success(function(data) {
+				// success callback
+				// create tags list
+				var tags = {};
+				var posts = angular.fromJson(data);
+				for (var i = 0; i < posts.length; i++) {
+					// get the post's tags, add them to the list
+					var tags_array = posts[i].tags;
+					for (var j = 0; j < tags_array.length; j++) {
+						// see if that tag exists	
+						if (tags[tags_array[j]]) 
+							tags[tags_array[j]] += 1;
+						else 
+							tags[tags_array[j]] = 1; // first one
+					}
+				}
+				console.log(tags);
+				$scope.tags = tags;
+			});
+		}
+	};
+}) // end tagsservice service
+
+// controllers
+.controller('TagCtrl', function($scope, TagService) {
+	$scope.tags = {};
+	TagService.getTags($scope);
+})
+// end tags controller
+</script>
