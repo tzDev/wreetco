@@ -37,7 +37,7 @@ html, body {
 	display: none !important;
 }
 
-h1, h2 {
+h1, h2, h3, h4 {
 	color: $headers;
 	padding: 0px;
 	margin: 0px;
@@ -168,3 +168,13 @@ h1, h2 {
 	margin-top: 1em;
 	text-align: justify;
 }
+
+.tags a:after {
+	content: " | "
+}
+
+.tags a:last-child:after {
+	content: "";
+}
+
+

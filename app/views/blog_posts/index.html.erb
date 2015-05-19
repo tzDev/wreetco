@@ -1,15 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <div class="page row">
-	<div class="small-8 column">
+	<div class="medium-8 small-12 column">
 		<% @blog_posts.to_a.each() do |post| %>
 			<%= render 'post', :post => post %>
 			
 		<% end %>
 	</div>
-	<div class="small-4 column show-for-medium-up">
-		sidebar 
+	<div class="medium-4 column show-for-medium-up">
+		<h4>Tags</h4> 
+		
 	</div>
 </div>
 
+<br />
 <%= link_to 'New Blog post', new_blog_post_path %>

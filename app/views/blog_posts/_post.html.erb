@@ -5,4 +5,11 @@
 	<div class="post_body">
 		<%= post.body.html_safe %>
 	</div><!-- end post_body -->
+	<div class="tags">
+		<% post.tags.each do |t| %>
+			<a href="#">
+				<%= t %>
+			</a>
+		<% end %>
+	</div><!-- end tags -->
 </div><!-- end blog_post -->
