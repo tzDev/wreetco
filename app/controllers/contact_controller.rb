@@ -5,7 +5,7 @@ class ContactController < ApplicationController
 	def create
 		# save the contact
 		@contact = Contact.new(contact_params);
-		#@contact.save;
+		@contact.save;
 		# send the emails
 		ContactMailer.contact_email_wreetco(params[:contact]).deliver_now;
 	end
