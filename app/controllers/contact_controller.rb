@@ -8,6 +8,7 @@ class ContactController < ApplicationController
 		@contact.save;
 		# send the emails
 		ContactMailer.contact_email_wreetco(params[:contact]).deliver_now;
+		ContactMailer.contact_email_client(params[:contact]).deliver_now;
 	end
 	
 	def contact_params
