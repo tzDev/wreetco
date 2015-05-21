@@ -7,6 +7,7 @@ class BlogPost
   field :tags, type: Array
   field :project, type: Integer
   field :published, type: Boolean
+	field :views, type: Integer
 
 	
 end

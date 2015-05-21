@@ -9,7 +9,10 @@ class BlogPostsController < ApplicationController
   # GET /blog_posts/1
   # GET /blog_posts/1.json
   def show
-  end
+		# add to the view count
+		@blog_post.views += 1
+		@blog_post.save
+	end
 
   # GET /blog_posts/new
   def new
@@ -69,6 +72,6 @@ class BlogPostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_post_params
-      params.require(:blog_post).permit(:title, :posted_date, :author, :body, :project, :published, tags: [])
+      params.require(:blog_post).permit(:title, :posted_date, :author, :body, :project, :views, :published, tags: [])
     end
 end
