@@ -1,5 +1,7 @@
 class BlogPost
   include Mongoid::Document
+	include Mongoid::Slug
+	
   field :title, type: String
   field :posted_date, type: DateTime
   field :author, type: String
@@ -8,6 +10,7 @@ class BlogPost
   field :project, type: Integer
   field :published, type: Boolean
 	field :views, type: Integer
-
+	
+	slug :title, history: true
 	
 end

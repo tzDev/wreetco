@@ -13,6 +13,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'foundation-rails', '= 5.5.1.2'
 gem 'mongoid', '~> 4', github: 'mongoid/mongoid'
+gem 'mongoid_slug'
 gem 'bson_ext'
 gem 'thin'
 gem 'mongo'

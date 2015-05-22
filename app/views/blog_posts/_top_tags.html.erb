@@ -11,7 +11,7 @@ angular.module("tags", ['ngRoute'])
 	$routeProvider
 	// / 
 	.when('/', {
-		template: '<h3>Tags</h3>' +
+		template: '<h3>Popular Tags</h3>' +
 							'<ul class="top_tags_list no-bullet ">' +
 							'<li ng-repeat="(tag, count) in tags">' +
 							'<a href="/blog/tag/{{tag}}">{{tag}}({{count}})</a>' +
