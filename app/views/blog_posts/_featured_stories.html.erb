@@ -1,0 +1,12 @@
+<div class="featured_stories">
+	<h3>Top/Featured</h3>
+	<% @blog_posts.to_a.sort! {|p| p.views} %>
+	<ul class="side-nav sidebar">
+		<% @blog_posts.to_a.each() do |p| %>
+		<li>
+			<a href="#"><%= p.title %></a>
+			<span class="date"><%= p.posted_date.to_s(:us_date) %></span>
+		</li>
+		<% end %>
+	</ul>
+</div>

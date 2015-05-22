@@ -11,10 +11,12 @@ angular.module("tags", ['ngRoute'])
 	$routeProvider
 	// / 
 	.when('/', {
-		template: '<h3>Top Tags</h3>' +
-							'<div ng-repeat="(tag, count) in tags">' +
-							'{{tag}}:{{count}}' +
-							'</div>'
+		template: '<h3>Tags</h3>' +
+							'<ul class="top_tags_list no-bullet ">' +
+							'<li ng-repeat="(tag, count) in tags">' +
+							'<a href="/blog/tag/{{tag}}">{{tag}}({{count}})</a>' +
+							'</li>' +
+							'</ul>'
 							,
 		controller: 'TagCtrl'
 	});

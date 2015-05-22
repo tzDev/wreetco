@@ -3,7 +3,7 @@ class BlogPostsController < ApplicationController
   # GET /blog_posts
   # GET /blog_posts.json
   def index
-    @blog_posts = BlogPost.all
+		@blog_posts = BlogPost.order_by(:posted_date.desc).to_a; # most recent first, mongo style
   end
 
   # GET /blog_posts/1
@@ -63,6 +63,12 @@ class BlogPostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+	
+	# POST /blog/search
+	def search
+		# find post by params	
+		#BlogPost.order_by(:views.desc).to_a
+	end
 
   private
     # Use callbacks to share common setup or constraints between actions.
