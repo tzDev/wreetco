@@ -1,0 +1,7 @@
+<div class="page row">
+	<div class="medium-8 small-12 column">
+		<% @blog_posts.to_a.each() do |post| %>
+			<%= render 'post', :post => post %>
+		<% end %>
+	</div>
+</div>

@@ -70,6 +70,13 @@ class BlogPostsController < ApplicationController
 		# find post by params	
 		#BlogPost.order_by(:views.desc).to_a
 	end
+	
+	# GET /blog/tag/:tag
+	def getPostsbyTag
+		tag = params[:tag]
+		@blog_posts = BlogPost.all_in(tags: [tag]).to_a;
+		render "show_tag"
+	end
 
   private
     # Use callbacks to share common setup or constraints between actions.

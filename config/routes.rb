@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 
 	resources :contact
   resources :blog_posts, :path => 'blog'
-
+	# we want to do the tags here, I know we should have had another controller
+	# but my inexperience with mongo made it difficult
+	match "/blog/tag/:tag", to: "blog_posts#getPostsbyTag", :via => 'get'
 
   get 'home/index'
 
