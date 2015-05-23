@@ -40,8 +40,9 @@ angular.module("tags", ['ngRoute'])
 						else 
 							tags[tags_array[j]] = 1; // first one
 					}
-				}
-				console.log(tags);
+				} // end post iteration
+				// now we have a list of tags with counts in tags
+				
 				$scope.tags = tags;
 			});
 		}

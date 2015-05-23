@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="theme-color" content="#195962">
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "wreetco" %></title>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
@@ -97,7 +97,9 @@
 					&nbsp;
 				</div>
 				<div class="small-12 medium-4 columns">
-					<h4>Other Stuff</h4>
+					<h4 style="margin-bottom: 0.5em;">Other Stuff</h4>
+					<span class="highlight">Top Posts</span>
+					<%= render 'blog_posts/featured_stories' %>
 				</div>
 			</div><!-- end row -->
 			<script>

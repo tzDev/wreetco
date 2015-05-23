@@ -70,7 +70,6 @@ angular.module("projectApp", ['ngRoute'])
 					}
 				} // end url check
 				params.callback(projects);
-				console.log(projects);
 			});
 		} // end getProjects method
 	};
