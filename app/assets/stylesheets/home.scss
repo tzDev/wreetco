@@ -38,9 +38,13 @@ html, body {
 }
 
 h1, h2, h3, h4 {
-	color: $headers;
+	color: $overlay_bg;
 	padding: 0px;
 	margin: 0px;
+}
+
+.sidebar h3 {
+	color: $overlay_bg !important;
 }
 
 .slider_container {
@@ -93,10 +97,6 @@ h1, h2, h3, h4 {
 	//color: #fff;
 }
 
-.splash_description h1, h2, h3 {
-	color: $headers;
-}
-
 .splash_message {
 	padding: 0.5em; 
 	line-height: 1.5em;	
@@ -132,6 +132,14 @@ h1, h2, h3, h4 {
 	text-transform: uppercase;
 	color: $highlights;
 	font-size: 18px;
+}
+
+.footer ul li a:not(:hover) {
+	color: #d7dae1 !important;
+}
+
+.footer ul li:hover {
+	background-color: rgba(104,115,140,.1) !important;
 }
 
 .highlight {
@@ -209,7 +217,8 @@ h1, h2, h3, h4 {
 	border-bottom: 1px solid $highlights;
 }
 
-.sidebar li a {
+.sidebar li a:not(:hover) {
+	color: $headers !important;
 }
 
 .sidebar li a:hover {
