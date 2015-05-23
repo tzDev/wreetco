@@ -7,7 +7,7 @@
 	</div><!-- end post_body -->
 	<div class="tags">
 		<% post.tags.each do |t| %>
-			<a href="#">
+			<a href="/blog/tag/<%= t %>">
 				<%= t %>
 			</a>
 		<% end %>
