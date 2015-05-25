@@ -1,1 +1,6 @@
-hello text mail
+From: <%= @inquiry[:first_name] + " " + @inquiry[:last_name] %>
+Email: <%= @inquiry[:email] %>
+Subject: <%= @inquiry[:subject] %>
+Time: <%= @inquiry[:submitted] %>
+
+<%= @inquiry[:message] %>
