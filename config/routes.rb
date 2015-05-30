@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 	match "/about", to: "about#index", :via => 'get'
 	match "/project", to: "project#index", :via => 'get'
 	match "/project/list", to: "project#getProjects", :via => 'get'
-
+	match "/get_contacts", to: "contact#get_contacts", :via => 'post'
 
 	resources :contact
   resources :blog_posts, :path => 'blog'

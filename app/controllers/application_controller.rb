@@ -9,5 +9,5 @@ class ApplicationController < ActionController::Base
 	def top_posts
 		BlogPost.order_by(:views.desc).limit(25).to_a;
 	end
-	
+
 end
