@@ -52,26 +52,28 @@ h1, h2, h3, h4 {
 }
 
 .splash {
-	//min-height: 80vh;
+	//min-height: 420px;
+	//max-height: 700px;
+	height: 90vh;
 	padding: 5em 0;
 }
 
-.splash-third {
+.splash_2 {
 	background-color: #333;
 	color: #fff;
 }
 
-.splash-first {
+.splash_0 {
 	background-color: $overlay_bg;
 	color: #fff;
 }
 
-.splash-second {
+.splash_1 {
 	background-color: #29909f;
 	color: #fff;
 }
 
-.splash-four {
+.splash_3 {
 	background-color: #fff;
 }
 

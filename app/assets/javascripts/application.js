@@ -16,3 +16,42 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+function setupTransitions() {
+	// define the css strings that we'll use for the 'style' property of the splash elements
+	var transitions = [
+		{
+			start: "background-color: rgb(37,41,50);",
+			end: "background-color: rgb(41,144,159);"
+		}, {
+			start: "background-color: rgb(41,144,159);",
+			end: "background-color: rgb(51,51,51);"
+		}, {
+			start: "background-color: rgb(51,51,51);",
+			end: "background-color: rgb(255, 255, 255);"
+		}
+	];
+	// get the splash elements and their rendered height
+	var splashes = $('.splash');
+	var splash_height = splashes.height();
+	// iterate the objects and set the 'data-[height]' attributes for skrollr
+	for (var i = 0; i < splashes.length; i++) {
+		// opacity div: splashes[i].children[0].style
+		// well we know how tall, but we need to know where the top is
+		var top = $('.splash_' + i).offset().top;
+		// set the element start 
+		splashes[i].setAttribute('data-' + top, transitions[i].start);
+		// set the element end
+		splashes[i].setAttribute('data-' + (top + splash_height), transitions[i].end);
+	}
+	// after the elements have had their data attributes set we can init skrollr
+	//skrollr.init();
+	// if everything looks good let's say so
+	return 1;
+	
+}
+	
+	
+	
+	
+	
