@@ -29,7 +29,10 @@ function setupTransitions() {
 		}, {
 			start: "background-color: rgb(51,51,51);",
 			end: "background-color: rgb(255, 255, 255);"
-		}
+		}, {
+			start: "",
+			end: ""
+		}	
 	];
 	// get the splash elements and their rendered height
 	var splashes = $('.splash');
@@ -42,10 +45,18 @@ function setupTransitions() {
 		// set the element start 
 		splashes[i].setAttribute('data-' + top, transitions[i].start);
 		// set the element end
-		splashes[i].setAttribute('data-' + (top + splash_height), transitions[i].end);
+		splashes[i].setAttribute('data-' + (top + splash_height - 50), transitions[i].end); // seems to look better if it ends a little early (50px)
+		// let's do out opacity stuff on the children
+		// we've wrapped all the child els in a convenient div for masking
+		var opacity_div = splashes[i].children[0]; // should be first child
+		// set the show/hide triggers
+		opacity_div.setAttribute('data-' + top, "opacity: 1;");
+		opacity_div.setAttribute('data-' + (top + 300), "opacity: 0;");
 	}
 	// after the elements have had their data attributes set we can init skrollr
-	//skrollr.init();
+	skrollr.init({
+		forceHeight: false
+	});
 	// if everything looks good let's say so
 	return 1;
 	
