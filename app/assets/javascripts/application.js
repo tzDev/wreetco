@@ -43,15 +43,16 @@ function setupTransitions() {
 		// well we know how tall, but we need to know where the top is
 		var top = $('.splash_' + i).offset().top;
 		// set the element start 
-		splashes[i].setAttribute('data-' + top, transitions[i].start);
+		splashes[i].setAttribute("data-" + top, transitions[i].start);
 		// set the element end
-		splashes[i].setAttribute('data-' + (top + splash_height - 50), transitions[i].end); // seems to look better if it ends a little early (50px)
+		splashes[i].setAttribute("data-" + (top + splash_height - 50), transitions[i].end); // seems to look better if it ends a little early (50px)
 		// let's do out opacity stuff on the children
 		// we've wrapped all the child els in a convenient div for masking
 		var opacity_div = splashes[i].children[0]; // should be first child
 		// set the show/hide triggers
-		opacity_div.setAttribute('data-' + top, "opacity: 1;");
-		opacity_div.setAttribute('data-' + (top + 300), "opacity: 0;");
+		opacity_div.setAttribute("data-" + (top - (splash_height / 2) - 200), "opacity: 0;"); // again looks better starting a little ealy (50px)
+		opacity_div.setAttribute("data-" + top, "opacity: 1;");
+		opacity_div.setAttribute("data-" + (top + 300), "opacity: 0;");
 	}
 	// after the elements have had their data attributes set we can init skrollr
 	skrollr.init({
