@@ -1,17 +1,28 @@
 class ContactController < ApplicationController
 	protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json'}
 	skip_before_action :verify_authenticity_token, if: Proc.new { |c| c.request.format == 'application/json'}
+	# wreetco contact manager
+	include ContactManager
+	include Slack
 	
   def index
   end;
 	
 	def create
 		# save the contact
-		@contact = Contact.new(contact_params);
-		@contact.save;
-		# send the emails
+	
+		c = ContactManager::Contact.new
+		c.first_name = params[:contact][:first_name]
+		c.last_name = params[:contact][:last_name]
+		c.contact_form_data = params[:contact]
+		c.email = {:email_address => params[:contact][:email], :opt_out => 0}
+		c.source = "Contact Form - wreet.co"
+		c.addContact(WCM_API)
+	
 		ContactMailer.contact_email_wreetco(params[:contact]).deliver_now;
 		ContactMailer.contact_email_client(params[:contact]).deliver_now;
+		# send an alert to slack
+		Slack::SlackMessage.new.sendMessage
 	end;
 
 	# POST /get_contacts

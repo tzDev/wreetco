@@ -17,7 +17,9 @@
 
 $(function(){ $(document).foundation(); });
 
+
 function setupTransitions() {
+	//alert(window.innerWidth);
 	// define the css strings that we'll use for the 'style' property of the splash elements
 	var transitions = [
 		{

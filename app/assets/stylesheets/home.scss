@@ -52,10 +52,16 @@ h1, h2, h3, h4 {
 }
 
 .splash {
-	//min-height: 420px;
-	//max-height: 700px;
 	height: 90vh;
-	//padding: 5em 0;
+	padding: 1em 0;
+}
+
+@media (max-width: 600px) {
+	// these super small screens, if in portrait mode, really crunch the content, and becuase of the way 
+	// we vertical align it absolute we need to fix the height ratio for a screen like this (clearfix uneffective)
+  .splash {
+    min-height: 900px;
+  }
 }
 
 .valign {
