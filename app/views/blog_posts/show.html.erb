@@ -5,3 +5,5 @@
 	</div>
 </div>
 
+<br />
+<%= if current_user then link_to 'Edit', edit_blog_post_path(@blog_post) end %>

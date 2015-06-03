@@ -17,6 +17,10 @@ class BlogPostsController < ApplicationController
 
   # GET /blog_posts/new
   def new
+		if !current_user
+			redirect_to new_user_session_path, notice: 'You are not logged in.'
+		end
+		
     @blog_post = BlogPost.new
   end
 
