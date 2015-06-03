@@ -1,5 +1,5 @@
 module ContactManager
-	class Contact
+	class WContact
 		attr_accessor :account, :first_name, :last_name, :email, :phone_numbers, :address, :employer,
 									:assignemnts, :social_accounts, :contact_form_data, :source, :created_date, :tags
 		def initialize

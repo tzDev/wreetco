@@ -10,19 +10,26 @@ class ContactController < ApplicationController
 	
 	def create
 		# save the contact
-	
-		c = ContactManager::Contact.new
+		# local db, just in case
+		@contact = Contact.new(contact_params);
+		@contact.save;
+		# now save it to the contact manager deal
+		c = ContactManager::WContact.new
 		c.first_name = params[:contact][:first_name]
 		c.last_name = params[:contact][:last_name]
 		c.contact_form_data = params[:contact]
 		c.email = {:email_address => params[:contact][:email], :opt_out => 0}
 		c.source = "Contact Form - wreet.co"
 		c.addContact(WCM_API)
-	
-		ContactMailer.contact_email_wreetco(params[:contact]).deliver_now;
+		# send the email messages
+		#ContactMailer.contact_email_wreetco(params[:contact]).deliver_now;
 		ContactMailer.contact_email_client(params[:contact]).deliver_now;
 		# send an alert to slack
-		Slack::SlackMessage.new.sendMessage
+		begin
+			Slack::SlackMessage.new.sendMessage(SLACK_WEBHOOK)
+		rescue
+			puts "[-] Could not post message to Slack."
+		end
 	end;
 
 	# POST /get_contacts

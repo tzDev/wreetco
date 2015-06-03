@@ -18,3 +18,4 @@ ActionMailer::Base.smtp_settings = {
 }
 
 WCM_API = ENV['WCM_API']
+SLACK_WEBHOOK = ENV['SLACK_HOOK']
