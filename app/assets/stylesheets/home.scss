@@ -149,6 +149,13 @@ h1, h2, h3, h4 {
 .footer ul li:hover {
 	background-color: rgba(104,115,140,.1) !important;
 }
+/*
+This is the CSS to make the footer text input
+background colors behave.
+*/
+.footer input:focus {
+	background-color: #464e5f;
+}
 
 .highlight {
 	color: $highlights;
