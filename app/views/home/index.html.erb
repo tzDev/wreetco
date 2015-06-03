@@ -21,8 +21,8 @@
 				matter how they choose to interact with your website. 
 			</p>
 		</div>
-		<div class="medium-4 small-12 columns" style="position: relative;">
-			<img src="/assets/responsive.png" alt="responsive web design" style="position: absolute: top: 50%;" />
+		<div class="medium-4 small-12 columns" style="position: relative;"><!-- Commenting out this style tag and the one below had no effect -->
+			<img src="/assets/responsive.png" alt="responsive web design" style="position: absolute: top: 50%;" /><!-- Consider removing? -->
 		</div>
 	</div>
 </div>
@@ -98,6 +98,13 @@
 <script>
 	if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera))
 		setupTransitions();
+	//This will call the Transition setup on a resize but I can't recreate the problem
+	//Leaving it commented out for now.
+	//window.onresize = resizeAction;
+	//function resizeAction(){
+		//console.log("RESIZE");
+		//setupTransitions();	
+	//}
 </script>
 
 
