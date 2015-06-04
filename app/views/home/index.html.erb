@@ -1,7 +1,7 @@
 <div id="skrollr-body">
 
 <div class="row full-width splash splash_0">
-	<div class="small-12 medium-12 columns valign">
+	<div class="small-12 medium-12 columns valign" id="valign1">
 		<div class="medium-8 small-12 columns">
 			<h1>Mobile first Web</h1>
 			<p class="splash_message">
@@ -28,7 +28,7 @@
 </div>
 
 <div class="row full-width splash splash_1">
-	<div class="small-12 medium-12 columns valign">
+	<div class="small-12 medium-12 columns valign" id="valign2">
 		<div class="medium-4 small-12 columns">
 			<h3 style="color: #fff;">Real app - try me!</h3>
 			<iframe src="http://localhost:8100" class="app_frame"></iframe>
@@ -51,7 +51,7 @@
 </div>
 
 <div class="row full-width splash splash_2">
-	<div class="small-12 medium-12 columns valign">
+	<div class="small-12 medium-12 columns valign" id="valign3">
 		<div class="medium-8 small-12 columns">
 			<h1>Technologies</h1>
 			<p class="splash_message">
@@ -65,14 +65,14 @@
 			</p>
 		</div>
 		<div class="medium-4 small-12 columns">
-			<ul class="large-block-grid-3">
-				<li><img src="/assets/html5-logo.png" style="padding: 1em;"></li>
-				<li><img src="/assets/css3-logo.png" style="padding: 1em;"></li>
-				<li><img src="/assets/javascript-logo.png" style="padding: 1em;"></li>
-				<li><img src="/assets/node-js-logo.png" style="padding: 1em;"></li>
-				<li><img src="/assets/angularjs-logo.png" style="padding: 1em;"></li>
-				<li><img src="/assets/ruby-on-rails-logo.png" style="padding: 1em;"></li>
-			</ul>
+			<div class="row">
+				<div class="small-4 columns"><img src="/assets/html5-logo.png" style="padding: 1em;"></div>
+				<div class="small-4 columns"><img src="/assets/css3-logo.png" style="padding: 1em;"></div>
+				<div class="small-4 columns"><img src="/assets/javascript-logo.png" style="padding: 1em;"></div>
+				<div class="small-4 columns"><img src="/assets/node-js-logo.png" style="padding: 1em;"></div>
+				<div class="small-4 columns"><img src="/assets/angularjs-logo.png" style="padding: 1em;"></div>
+				<div class="small-4 columns"><img src="/assets/ruby-on-rails-logo.png" style="padding: 1em;"></div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -114,6 +114,14 @@
 		//console.log("RESIZE");
 		//setupTransitions();	
 	//}
+	if(screen.width < 600){
+		var div1 = document.getElementById("valign1");
+		var div2 = document.getElementById("valign2");	
+		var div3 = document.getElementById("valign3");
+		div1.className = "small-12 medium-12 columns";
+		div2.className = "small-12 medium-12 columns";
+		div3.className = "small-12 medium-12 columns";
+	}
 </script>
 
 
