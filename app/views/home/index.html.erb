@@ -107,13 +107,10 @@
 <script>
 	if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera))
 		setupTransitions();
-	//This will call the Transition setup on a resize but I can't recreate the problem
-	//Leaving it commented out for now.
-	//window.onresize = resizeAction;
-	//function resizeAction(){
-		//console.log("RESIZE");
-		//setupTransitions();	
-	//}
+	
+	window.onresize = function () {
+		setupTransitions();	
+	};
 </script>
 
 

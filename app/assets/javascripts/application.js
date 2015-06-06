@@ -52,9 +52,9 @@ function setupTransitions() {
 		// we've wrapped all the child els in a convenient div for masking
 		var opacity_div = splashes[i].children[0]; // should be first child
 		// set the show/hide triggers
-		opacity_div.setAttribute("data-" + (top - (splash_height / 2) - 200), "opacity: 0;"); // again looks better starting a little ealy (50px)
-		opacity_div.setAttribute("data-" + top, "opacity: 1;");
-		opacity_div.setAttribute("data-" + (top + 300), "opacity: 0;");
+		opacity_div.setAttribute("data-" + (top - (splash_height / 2)), "opacity: 0;"); 
+		opacity_div.setAttribute("data-" + (top - 50), "opacity: 1;"); // again looks better starting a little ealy (50px)
+		opacity_div.setAttribute("data-" + (top + (splash_height / 2)), "opacity: 0;");
 	}
 	// after the elements have had their data attributes set we can init skrollr
 	skrollr.init({
