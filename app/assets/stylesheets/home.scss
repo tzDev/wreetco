@@ -256,3 +256,11 @@ background colors behave.
 .debug {
 	border: 1px solid red !important;
 }
+
+.contact_text h1 {
+	color: $headers;
+}
+
+.contact_text p {
+	text-align: justify;
+}
