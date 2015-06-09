@@ -2,33 +2,33 @@
 	<%= form_for :contact do |f| %>
 		<div class="row">
 			<div class="small-12 medium-6 columns">
-				<%= f.label :first_name %>
-				<%= f.text_field :first_name, :placeholder => 'First name' %>
+				<%= f.label :first_name%>
+				<%= f.text_field :first_name, :placeholder => 'First name', :required => true %>
 			</div>
 			<div class="small-12 medium-6 columns">
 				<%= f.label :last_name %>
-				<%= f.text_field :last_name, :placeholder => 'Last name' %>			
+				<%= f.text_field :last_name, :placeholder => 'Last name', :required => true  %>			
 			</div>
 		</div>
 		<!-- next row -->
 		<div class="row">
 			<div class="small-12 columns">
 				<%= f.label :email %>
-				<%= f.text_field :email, :placeholder => 'Email' %>
+				<%= f.text_field :email, :placeholder => 'Email', :required => true %>
 			</div>
 		</div>
 		<!-- next row -->
 		<div class="row">
 			<div class="small-12 column">
 				<%= f.label :subject %>
-				<%= select_tag("contact[subject]", options_for_select(['---','Web Development','App Development','Software Development','Consulting','Support','General/Other'])) %>
+				<%= select_tag("contact[subject]", options_for_select(['---','Web Development','App Development','Software Development','Consulting','Support','Report a Bug','General/Other'])) %>
 			</div>
 		</div>
 		<!-- next row -->
 		<div class="row">
 			<div class="small-12 columns">
 				<%= f.label :message %>
-				<%= f.text_area :message, :placeholder => 'Message', :rows => 5 %>
+				<%= f.text_area :message, :placeholder => 'Message', :rows => 5, :required => true %>
 			</div>
 		</div>
 		<!-- submit row -->
