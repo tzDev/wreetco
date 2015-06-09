@@ -1,4 +1,4 @@
-/*[data-ca3_icon]::before {
+[data-ca3_icon]::before {
     font-weight: normal;
     content: attr(data-ca3_icon);
 }
@@ -45,4 +45,4 @@
   0%   { transform:translate(0,-20px); opacity: 0;  }
   50%  { opacity: 1;  }
   100% { transform:translate(0,20px); opacity: 0; }
-}*/
+}
