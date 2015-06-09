@@ -61,8 +61,24 @@ function setupTransitions() {
 		forceHeight: false
 	});
 	// if everything looks good let's say so
-	return 1;
-	
+	return 1;	
+}
+
+function removeTransitions() {
+	var splashes = $('.splash'); // get all the splashes 
+	for (var i = 0; i < splashes.length; i++) { // iterate through them
+		for (var j = 0; j < splashes[i].attributes.length; i++) {
+			
+		} // end attributes iteration
+	} // end splashes iteration
+}
+
+
+
+
+function fixSize(image) {
+	var h = $('.splash').height();
+	image.style.height = h - 150 + "px";
 }
 	
 	

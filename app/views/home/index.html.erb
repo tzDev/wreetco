@@ -24,8 +24,7 @@
 <div class="row full-width splash splash_1">
 	<div class="small-12 medium-12 columns valign" id="valign2">
 		<div class="medium-4 small-12 columns">
-			<h3 style="color: #fff;">Real app - try me!</h3>
-			<iframe src="http://localhost:8100" class="app_frame"></iframe>
+			<img src="/assets/app.png" id="app" onload="fixSize(this)" alt="mobile application development" />
 		</div>
 		<div class="medium-8 small-12 columns">
 			<h1>Mobile app development</h1>
@@ -112,21 +111,29 @@
 <!-- scripts to setup scroll animaions and 'fix' absolutely positioned content overflow -->
 <script>
 	if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera))
-		setupTransitions();
-	
-	/*window.onresize = function () {
 		setupTransitions();	
-	};*/
-
-	// cronned it
-	if(screen.width < 600){
-		var div1 = document.getElementById("valign1");
-		var div2 = document.getElementById("valign2");	
-		var div3 = document.getElementById("valign3");
-		div1.className = "small-12 medium-12 columns";
-		div2.className = "small-12 medium-12 columns";
-		div3.className = "small-12 medium-12 columns";
-	}
+	
+	// enquire.js helps us query
+	enquire.register("screen and (max-width: 600px)", {
+		match : function() {
+			var splashes = $('.splash');
+			for (var i = 0; i < splashes.length; i++) {
+				var imgs = splashes[i].getElementsByTagName('img');
+				for (var j = 0; j < imgs.length; j++) {
+					if (imgs[j].id == "app") {
+						imgs[j].style.maxHeight = ($('.splash').height() * .33) + "px";
+						imgs[j].parentNode.style.textAlign = "center";
+						imgs[j].parentNode.style.marginBottom = "2em";
+					}
+						
+				} // end images
+			} // end splashes 
+		}, // end match
+		unmatch : function() {
+			// 'unfix' the things
+			
+		}
+	});
 </script>
 
 
