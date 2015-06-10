@@ -90,6 +90,14 @@ h1, h2, h3, h4 {
 }
 
 
+.top-bar .toggle-topbar.menu-icon {
+	margin-right: .5em; 
+}
+
+.top-bar .toggle-topbar.menu-icon a:hover {
+	background-color: transparent;
+}
+
 .app_frame {
 	width: 100%;
 	border: none;
@@ -225,7 +233,7 @@ background colors behave.
 
 .top_tags_list li {
 	padding: .5em 1em;
-	font-size: 1.25em;
+	font-size: 1.4em;
 }
 
 .social img {
