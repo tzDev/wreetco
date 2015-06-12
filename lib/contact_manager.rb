@@ -53,7 +53,7 @@ module ContactManager
 	class API
 		# api integration methods etc
 		def initialize
-			@base = "http://localhost:3000/api/v1"
+			@base = "http://wcmapi.wreet.co/api/v1"
 		end # end constructor
 		
 		def addContact(contact, api_key)

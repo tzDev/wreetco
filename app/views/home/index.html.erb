@@ -24,7 +24,7 @@
 <div class="row full-width splash splash_1">
 	<div class="small-12 medium-12 columns valign" id="valign2">
 		<div class="medium-4 small-12 columns">
-			<img src="/assets/app.png" id="app" onload="fixSize(this)" alt="mobile application development" />
+			<img src="/assets/app.png" id="app" alt="mobile application development" />
 		</div>
 		<div class="medium-8 small-12 columns">
 			<h1>Mobile app development</h1>
@@ -110,9 +110,6 @@
 <!-- end scroll arrow -->
 <!-- scripts to setup scroll animaions and 'fix' absolutely positioned content overflow -->
 <script>
-	if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera))
-		setupTransitions();	
-	
 	if ((/iPhone|iPad|iPod/i).test(navigator.userAgent || navigator.vendor || window.opera)) {
 		var div1 = document.getElementById("valign1");
 		var div2 = document.getElementById("valign2");	
@@ -123,8 +120,12 @@
 	}
 	
 	// enquire.js helps us query
-	enquire.register("screen and (max-width: 600px)", {
+	enquire.register("screen and (max-width: 40em)", {
+		setup: function() {
+			setupTransitions();	
+		}, 
 		match : function() {
+			removeTransitions();
 			var splashes = $('.splash');
 			for (var i = 0; i < splashes.length; i++) {
 				var imgs = splashes[i].getElementsByTagName('img');
@@ -139,7 +140,7 @@
 			} // end splashes 
 		}, // end match
 		unmatch : function() {
-			// 'unfix' the things
+			setupTransitions();
 		}
 	});
 </script>

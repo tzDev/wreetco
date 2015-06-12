@@ -65,22 +65,9 @@ function setupTransitions() {
 }
 
 function removeTransitions() {
-	var splashes = $('.splash'); // get all the splashes 
-	for (var i = 0; i < splashes.length; i++) { // iterate through them
-		for (var j = 0; j < splashes[i].attributes.length; i++) {
-			
-		} // end attributes iteration
-	} // end splashes iteration
+	skrollr.get().destroy();
 }
 
-
-
-
-function fixSize(image) {
-	var h = $('.splash').height();
-	image.style.height = h - 150 + "px";
-}
-	
 	
 	
 	
