@@ -117,12 +117,13 @@ $include-html-global-classes: $include-html-classes;
 // $jet         : #222222;
 // $black       : #000000;
 /* colors that we use */
-$overlay_bg: #252932;
-//$overlay_bg_hover: #191C21;
-$overlay_bg_hover: #252932;
+
+$headers: #195962;
+$overlay_bg: #011722;
 $offwhite: #DFE5CE;
 $highlights: #F56F6C;
-$headers: #195962;
+$text: #191C21;
+$overlay_bg_hover: #252932;
 
 $nav_bg: $overlay_bg;
 $nav_bg_hover: $overlay_bg_hover;
@@ -1392,7 +1393,7 @@ $orbit-timer-show-progress-bar: false;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: $headers;
+$topbar-bg-color: $overlay_bg;
 $topbar-bg: $topbar-bg-color;
 
 // Height and margin

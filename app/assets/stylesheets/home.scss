@@ -3,14 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $headers: #195962;
-$overlay_bg: #252932;
+$overlay_bg: #011722;
 $offwhite: #DFE5CE;
 $highlights: #F56F6C;
 $text: #191C21;
 
 html, body {
-	//font-size: 16px;
 	font-color: $text;
+	background-color: $overlay_bg!important;
 }
 
 .top-bar .name h1 a:hover {
@@ -38,9 +38,10 @@ html, body {
 }
 
 h1, h2, h3, h4 {
-	color: $overlay_bg;
+	color: #fff;
 	padding: 0px;
 	margin: 0px;
+	text-transform: uppercase;
 }
 
 .sidebar h3 {
@@ -51,44 +52,12 @@ h1, h2, h3, h4 {
 	margin-top: 1em;
 }
 
-.splash {
-	height: 90vh;
-	padding: 1em 0;
-}
-
-@media (max-width: 600px) {
-	// these super small screens, if in portrait mode, really crunch the content, and becuase of the way 
-	// we vertical align it absolute we need to fix the height ratio for a screen like this (clearfix uneffective)
-  .splash {
-    min-height: 900px;
-  }
-}
 
 .valign {
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
 }
-
-.splash_2 {
-	background-color: #333;
-	color: #fff;
-}
-
-.splash_0 {
-	background-color: $overlay_bg;
-	color: #fff;
-}
-
-.splash_1 {
-	background-color: #29909f;
-	color: #fff;
-}
-
-.splash_3 {
-	background-color: #fff;
-}
-
 
 .top-bar .toggle-topbar.menu-icon {
 	margin-right: .5em; 
@@ -104,19 +73,12 @@ h1, h2, h3, h4 {
 	min-height: 300px;
 }
 
-.splash h1 {
-	color: #fff;
-	text-transform: uppercase;
-	font-size: 2.5em;
-}
-
 .bordered div {
 	border: 1px solid red;
 }
 
-.splash_slider {
-	//background: $headers;
-	//color: #fff;
+.splash {
+	height: 70vh;
 }
 
 #scroll_arrow:hover {
@@ -124,11 +86,6 @@ h1, h2, h3, h4 {
 	cursor: alias;
 }
 
-.splash_message {
-	padding: 0.5em; 
-	line-height: 1.5em;	
-	text-align: justify;
-}
 
 .right {
 	float: right;
@@ -197,6 +154,39 @@ background colors behave.
    margin-left: auto;
    margin-right: auto;
    max-width: initial;
+}
+
+.splash_arrow {
+	width: 0; 
+	height: 0; 
+	border-left: 12.5vw solid transparent;
+	border-right: 12.5vw solid transparent;
+	border-top: 10vw solid $overlay_bg;
+	margin: 0 auto;
+	margin-bottom: 2em;
+}
+
+.services {
+	background-color: #fff;
+	min-height: 50vh;
+}
+
+.service-icon {
+	width: 50%;
+	margin: 0 auto;
+	margin-bottom: 2em;
+}
+
+.services .columns p {
+	margin-top: 1em;
+	color: #999;
+	font-size: .9em !important;
+	text-align: justify;
+}
+
+.services h4 {
+	color: #333;
+	text-align: center;
 }
 
 .page a, .page a:visited {
@@ -277,3 +267,7 @@ background colors behave.
 .contact_text p {
 	text-align: justify;
 }
+
+.headroom {position: fixed;top: 0;left: 0;right: 0;transition: all .2s ease-in-out; z-index: 99;}
+.headroom--unpinned {top: -100px;}
+.headroom--pinned {top: 0;}

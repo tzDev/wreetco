@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="theme-color" content="#195962">
+		<meta name="theme-color" content="#011722">
     <title><%= content_for?(:title) ? yield(:title) : "wreetco" %></title>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -12,8 +12,8 @@
   </head>
   <body>		
 		<!-- nav bar -->
-		<div class="sticky">
-			<nav class="top-bar" data-topbar role="navigation">
+		<div class="" id="nav-contain">
+			<nav class="row top-bar" data-topbar role="navigation">
 				<ul class="title-area">
 					<li class="name">
 						<!--<h1><%= link_to "wreetco", root_url %></h1>-->
@@ -48,7 +48,7 @@
 					<!-- Left Nav Section -->
 					<ul class="right">
 						<li><%= link_to "blog", "/blog", controller: "blog_posts", action: "index" %></li>
-						<li><li><%= link_to "contact", "/contact" %></li></li>
+						<li><%= link_to "contact", "/contact" %></li>
 					</ul>
 				</section>
 			</nav>
