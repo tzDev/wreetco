@@ -122,8 +122,19 @@
 	<div class="projects">
 		<div class="splash_arrow" style="border-top: 10vw solid #fff;">&nbsp;</div>
 		<div class="row">
-			<div class="small-12 columns text-center">
-				<h2>Projects</h2>
+			<div id="project-slider">
+				<div class="project-card">
+					<img src="http://lorempixel.com/1000/1000/technics" />
+				</div>
+				<div class="project-card">
+					<img src="http://lorempixel.com/1000/1000/nature" />
+				</div>
+				<div class="project-card">
+					<img src="http://lorempixel.com/1000/1000/transport" />
+				</div>
+				<div class="project-card">
+					<img src="http://lorempixel.com/1000/1000/city" />
+				</div>
 			</div>
 		</div>
 	
@@ -149,9 +160,35 @@
 			hr.init();
 			// since headroom has to be fixed, compensate the page element offset, adding one em
 			var offset = $('nav').height() + parseFloat($("body").css("font-size"));
-			$('.page').first().css('padding-top', offset);
+			//$('.page').first().css('padding-top', offset);
 			// fix service icon width
 			$('.service-icon').css('height', $('.service-icon').width());
+			// setup the slick carousel
+			$('#project-slider').slick({
+				centerMode: true,
+				centerPadding: '60px',
+				slidesToShow: 3,
+				responsive: [
+					{
+						breakpoint: 768,
+						settings: {
+							arrows: false,
+							centerMode: true,
+							centerPadding: '40px',
+							slidesToShow: 3
+						}
+					},
+					{
+						breakpoint: (parseFloat($("body").css("font-size")) * 49),
+						settings: {
+							arrows: false,
+							centerMode: true,
+							centerPadding: '40px',
+							slidesToShow: 1
+						}
+					}
+				]
+			});
 		}, // end setup
 		
 		match: function() {
