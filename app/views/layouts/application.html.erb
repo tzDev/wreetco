@@ -58,57 +58,45 @@
 		<!-- footer content follows -->
 		<div class="footer">
 			<div class="row">
-				<div class="small-12 medium-3 columns">
-					<h4>Get in touch</h4>
+				<div class="small-12 medium-7 columns">
+					<h3>Get in touch</h3>
 					<%= render '/contact/contact_form' %>
 				</div><!-- end form col -->
-				<div class="small-12 medium-1 columns">
-					&nbsp;
-				</div>
-				<div class="small-12 medium-3 columns">
-					<h4>contact</h4>
-					You can also email us or 
-					find us on social media. 
-					<br /><br />
-					<span class="highlight">Email</span><br />
-					info@wreet.co
-					<br />
-					We'll get back to you as soon as we can. 
+				<div class="small-12 medium-5 columns">
+					<h4 style="visibility: hidden;">contact</h4>
+					<span style="visibility: hidden;">You can also email us or 
+						find us on social media.</span>
 					<br /><br />
 					<span class="highlight">Social</span>
-					<div class="row social" style="margin-top: 10px;">
-						<div class="columns small-3">
-							<img src="/assets/facebook_icon.png" alt="Facebook" />
-						</div>
-						<div class="columns small-3">
-							<a href="https://twitter.com/tzdev" target="_blank">
-								<img src="/assets/twitter_icon.png" alt="Twitter" />
-							</a>
-						</div>
-						<div class="columns small-3">
-							<img src="/assets/google_plus_icon.png" alt="Google+" />
-						</div>
-						<div class="columns small-3">
-							<a href="https://github.com/wreetco" target="_blank">
-								<img src="/assets/github_icon.png" alt="Github" />
-							</a>
-						</div>
+					<div class="social" style="margin-top: 10px;">
+						<ul class="small-block-grid-8">
+							<li>
+								<img src="/assets/facebook_icon.png" alt="Facebook" />
+							</li>
+							<li>
+								<a href="https://twitter.com/tzdev" target="_blank">
+									<img src="/assets/twitter_icon.png" alt="Twitter" />
+								</a>
+							</li>
+							<li>
+								<img src="/assets/google_plus_icon.png" alt="Google+" />
+							</li>
+							<li>
+								<a href="https://github.com/wreetco" target="_blank">
+									<img src="/assets/github_icon.png" alt="Github" />
+								</a>
+							</li>
+						</ul>
 					</div>
-				</div>
-				<div class="small-12 medium-1 columns">
-					&nbsp;
-				</div>
-				<div class="small-12 medium-4 columns">
-					<h4 style="margin-bottom: 0.5em;">Other Stuff</h4>
-					<span class="highlight">Top Posts</span>
-					<%= render 'blog_posts/featured_stories' %>
+					<span class="highlight">Email</span><br />
+					info@wreet.co
 				</div>
 			</div><!-- end row -->
 			<script>
 				// fix the name fields
 				var divs = $('.footer .medium-6');
 				for (var i = 0; i < divs.length; i++) {
-					divs[i].className = "columns small-12";
+					//divs[i].className = "columns small-12";
 				}
 			</script>
 		</div><!-- end footer -->
