@@ -17,6 +17,10 @@ html, body {
 	background-color: transparent;
 }
 
+#nav-contain {
+	background-color: $overlay_bg;
+}
+
 .top_contrast {
 	background: $headers;
 }
@@ -232,7 +236,7 @@ background colors behave.
 }
 
 .project-card {
-	margin: 0 0.5em;
+	margin: 1em 0.5em;
 	//padding: 20px;
 	transition: all 300ms ease;
 }
@@ -246,7 +250,7 @@ background colors behave.
 }
 
 .slick-track {
-	padding-bottom: 1em;
+	//padding: 1em 0;
 }
 	
 .projects h1, .projects h2 {
@@ -335,3 +339,10 @@ background colors behave.
 .headroom {position: fixed;top: 0;left: 0;right: 0;transition: all .2s ease-in-out; z-index: 99;}
 .headroom--unpinned {top: -100px;}
 .headroom--pinned {top: 0;}
+
+
+
+
+
+
+
