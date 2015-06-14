@@ -1,4 +1,5 @@
-<div class="page" style="height: 2000px;">
+<div class="page">
+	<div id="splash-container">
 	<div class="row splash">
 		<div class="small-12 columns valign">
 			<h1>Responsive design</h1>
@@ -6,6 +7,7 @@
 			<h1>Mobile apps</h1>
 			<br />
 			<h1>Web apps</h1>
+		</div>
 		</div>
 	</div>
 
@@ -48,13 +50,94 @@
 		</div>
 	</div>
 	
+	<div class="row" style="margin-top: 5em; margin-bottom: 5em;">
+		<div class="columns small-12 text-center">
+			<h2>Full stack solutions</h2>
+			<p style="color: #aaa; margin-top: 1em;">
+				Let us handle the design, development and deployment of your next project.
+			</p>
+		</div>
+	</div>
+	
+	<div class="all-services" style="background-color: #fff;">
+		<div class="row">
+			<div class="small-12 medium-4 columns">
+				<img src="/assets/app_icon.png" style="height: 38px;" class="sicon" />
+				<h4>Mobile apps</h4>
+				<p class="light-text">
+					Mauris condimentum commodo porta. Curabitur suscipit, odio a viverra volutpat, nibh tellus 
+					laoreet dui, at imperdiet augue nunc eget metus. Mauris faucibus molestie pulvinar. 
+					Vestibulum et fringilla odio.
+				</p>
+			</div>
+			<div class="small-12 medium-4 columns">
+				<img src="/assets/webapp_icon.png" class="sicon" />
+				<h4>Web apps</h4>
+				<p class="light-text">
+					Mauris condimentum commodo porta. Curabitur suscipit, odio a viverra volutpat, nibh tellus 
+					laoreet dui, at imperdiet augue nunc eget metus. Mauris faucibus molestie pulvinar. 
+					Vestibulum et fringilla odio.
+				</p>
+			</div>
+			<div class="small-12 medium-4 columns">
+				<img src="/assets/responsive_icon.png" class="sicon" />
+				<h4>Responsive design</h4>
+				<p class="light-text">
+					Mauris condimentum commodo porta. Curabitur suscipit, odio a viverra volutpat, nibh tellus 
+					laoreet dui, at imperdiet augue nunc eget metus. Mauris faucibus molestie pulvinar. 
+					Vestibulum et fringilla odio.
+				</p>
+			</div>
+			<div class="small-12 medium-4 columns">
+				<img src="/assets/api_icon.png" class="sicon" />
+				<h4>Api development</h4>
+				<p class="light-text">
+					Mauris condimentum commodo porta. Curabitur suscipit, odio a viverra volutpat, nibh tellus 
+					laoreet dui, at imperdiet augue nunc eget metus. Mauris faucibus molestie pulvinar. 
+					Vestibulum et fringilla odio.
+				</p>
+			</div>
+			<div class="small-12 medium-4 columns">
+				<img src="/assets/database_icon.png" style="height: 38px;" class="sicon" />
+				<h4>Database</h4>
+				<p class="light-text">
+					Mauris condimentum commodo porta. Curabitur suscipit, odio a viverra volutpat, nibh tellus 
+					laoreet dui, at imperdiet augue nunc eget metus. Mauris faucibus molestie pulvinar. 
+					Vestibulum et fringilla odio.
+				</p>
+			</div>
+			<div class="small-12 medium-4 columns">
+				<img src="/assets/server_icon.png" style="height: 38px;" class="sicon" />
+				<h4>Hosting</h4>
+				<p class="light-text">
+					Mauris condimentum commodo porta. Curabitur suscipit, odio a viverra volutpat, nibh tellus 
+					laoreet dui, at imperdiet augue nunc eget metus. Mauris faucibus molestie pulvinar. 
+					Vestibulum et fringilla odio.
+				</p>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div class="projects">
+		<div class="splash_arrow" style="border-top: 10vw solid #fff;">&nbsp;</div>
+		<div class="row">
+			<div class="small-12 columns text-center">
+				<h2>Projects</h2>
+			</div>
+		</div>
+	
+	</div>
+
+	
+	
 	
 	
 </div><!-- end 'page' -->
 <!-- some js stuff -->
 <script>
 	$(window).resize(function() {
-		$('.service-icon').css('height', $('.service-icon').width())
+		$('.service-icon').css('height', $('.service-icon').width());
 	});
 	// enquire is your friend
 	enquire.register("screen and (max-width: 40em)", {
@@ -66,7 +149,7 @@
 			hr.init();
 			// since headroom has to be fixed, compensate the page element offset, adding one em
 			var offset = $('nav').height() + parseFloat($("body").css("font-size"));
-			$('.page').first().css('padding-top', offset)
+			$('.page').first().css('padding-top', offset);
 			// fix service icon width
 			$('.service-icon').css('height', $('.service-icon').width());
 		}, // end setup

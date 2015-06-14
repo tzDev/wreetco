@@ -67,12 +67,6 @@ h1, h2, h3, h4 {
 	background-color: transparent;
 }
 
-.app_frame {
-	width: 100%;
-	border: none;
-	min-height: 300px;
-}
-
 .bordered div {
 	border: 1px solid red;
 }
@@ -138,7 +132,23 @@ background colors behave.
 }
 
 .page {
-	min-height: 500px;
+	//background: url(/assets/splash_bg.png);
+	//background-size: cover;
+}
+
+#splash-container {
+	position: relative;
+}
+
+#splash-container::after {
+	content: "";
+	//background: url(/assets/splash_bg.png);
+	opacity: 0.1;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
 }
 
 .blog_post {
@@ -168,7 +178,9 @@ background colors behave.
 
 .services {
 	background-color: #fff;
-	min-height: 50vh;
+	//min-height: 50vh;
+	padding-bottom: 2em;
+	z-index: 2;
 }
 
 .service-icon {
@@ -185,8 +197,42 @@ background colors behave.
 }
 
 .services h4 {
-	color: #333;
+	color: #222;
 	text-align: center;
+}
+
+.all-services {
+	padding: 5em 0;
+}
+
+.all-services p {
+	text-align: justify;
+	font-size: .9em !important;
+	margin-top: -1em;
+}
+
+.sicon {
+	float: left;
+	width: 48px;
+	margin-right: .5em;
+}
+
+.light-text {
+	color: #999;
+}
+
+.all-services h4 {
+	color: #222;
+	position: relative;
+	top: -.25em;
+}
+
+.projects {
+	background-color: #eee;
+}
+
+.projects h1, .projects h2 {
+	color: #222;
 }
 
 .page a, .page a:visited {
