@@ -181,14 +181,21 @@
 				</div>
 			</div>
 		</div>
-	
 	</div>
 
+	<div class="contact">
+		<div class="row collapse full-width map">
+			<div class="columns 12 flex-video" style="padding-bottom: 40vh;" id="map-canvas">
+				hey
+			</div>
+		</div>
+	</div>
 	
 	
 	
 </div><!-- end 'page' -->
 <!-- some js stuff -->
+<script src="https://maps.googleapis.com/maps/api/js"></script>
 <script>
 	$(window).resize(function() {
 		$('.service-icon').css('height', $('.service-icon').width());
@@ -233,6 +240,23 @@
 					}
 				]
 			});
+			// init the map
+			var mapCanvas = document.getElementById('map-canvas');
+			var mapOptions = {
+			center: new google.maps.LatLng(39.733891, -104.981394),
+			zoom: 12,
+			draggable: false,
+			scrollwheel: false,
+			scalaControl: false,
+			disableDefaultUI: true,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+			}
+			var map = new google.maps.Map(mapCanvas, mapOptions);
+				var marker = new google.maps.Marker({
+				position: new google.maps.LatLng(39.7391667, -104.9841667),
+				map: map,
+				title: 'wreetco'
+  		});
 		}, // end setup
 		
 		match: function() {
