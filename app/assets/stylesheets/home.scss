@@ -93,6 +93,7 @@ h1, h2, h3, h4 {
 	background-color: $overlay_bg;
 	color: #d7dae1;
 	padding-top: 1em 0;
+	position: relative;
 }
 
 .footer .contact_form {
@@ -264,6 +265,7 @@ background colors behave.
 }
 
 .contact {
+
 }
 
 .page a, .page a:visited {
@@ -302,7 +304,7 @@ background colors behave.
 	padding: .5em 1em;
 	font-size: 1.4em;
 }
-
+	
 .sidebar li {
 	padding-bottom: .5em;
 	font-size: 1.5em !important;

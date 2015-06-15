@@ -48,7 +48,7 @@
 					<!-- Left Nav Section -->
 					<ul class="right">
 						<li><%= link_to "blog", "/blog", controller: "blog_posts", action: "index" %></li>
-						<li><%= link_to "contact", "/contact" %></li>
+						<li><a href="javascript:scrollTo('#contact');">Contact</a></li>
 					</ul>
 				</section>
 			</nav>
@@ -56,7 +56,7 @@
 		<!-- content follows -->
     <%= yield %>
 		<!-- footer content follows -->
-		<div class="footer">
+		<div class="footer" id="contact"><!-- is our primary contact form for now -->
 			<div class="row">
 				<div class="small-12 medium-7 columns">
 					<h3>Get in touch</h3>
