@@ -259,6 +259,10 @@ background colors behave.
 	color: #222;
 }
 
+.card a {
+	color: $overlay_bg !important;
+}
+
 .contact {
 }
 
