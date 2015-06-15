@@ -174,7 +174,7 @@
 						</div>
 						<div class="content">
 							<p>
-								Our custom MEAN seed. Includes Mongoose support with example and comes bootstrapped with 
+								Our custom MEAN seed. Includes Mongoose support with example model and comes bootstrapped with 
 								AngularJS and a copy of Zurb's Foundation 5. It's our preferred way to get started. 
 							</p>
 						</div>
@@ -198,20 +198,7 @@
 </div><!-- end 'page' -->
 <!-- some js stuff -->
 <script src="https://maps.googleapis.com/maps/api/js"></script>
-<script>
-	// scroll
-	function scrollTo(element) {
-		// kill all the waypoints on the page to make the scroll smooth
-		$('html, body').animate({
-			scrollTop: $(element).offset().top
-		}, 1000);
-		// now fix the waypoints
-		setTimeout(function() {
-			location.hash = element.replace('#', '');
-		}, 1000); // give the animation plenty of time to finish
-	} // end scrollTo function
-	
-	
+<script>	
 	$(window).resize(function() {
 		$('.service-icon').css('height', $('.service-icon').width());
 	});
@@ -277,12 +264,22 @@
 		}, // end setup
 		
 		match: function() {
-			
+			// onload stuff for small screens
 		}, // end match
 		
 		unmatch: function() {
-			
+			// stuff do that we don't want in the match function the other way around
 		} // end unmatch
+	});
+	
+	enquire.register("screen and (min-width: 40em)", {
+		match: function() {
+			// onload stuff for big screens
+		},
+		
+		unmatch: function() {
+			// will be executed in addition to the match query on the other instance
+		}
 	});
 
 </script>

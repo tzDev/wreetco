@@ -8,7 +8,7 @@ angular.module("tags", ['ngRoute'])
 	$routeProvider
 	// / 
 	.when('/', {
-		template: '<h3>Popular Tags</h3>' +
+		template: '<h4>Popular Tags</h4>' +
 							'<ul class="top_tags_list no-bullet ">' +
 							'<li ng-repeat="(tag, count) in tags">' +
 							'<a href="/blog/tag/{{tag}}">{{tag}}({{count}})</a>' +
@@ -52,7 +52,9 @@ angular.module("tags", ['ngRoute'])
 	TagService.getTags($scope);
 })
 // end tags controller
-angular.bootstrap(document, ['tags']); // make sure it bootstraps
+$(document).ready(function() {
+	angular.bootstrap(document, ['tags']); // make sure it bootstraps
+});
 </script>
 
 
