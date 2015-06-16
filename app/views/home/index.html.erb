@@ -205,15 +205,6 @@
 	// enquire is your friend
 	enquire.register("screen and (max-width: 40em)", {
 		setup: function() {
-			// setup the headroom menu
-			Headroom.options.offset = 0; // how far down until we start the hiding feature
-			Headroom.options.tolerance = 5; // how many px to allow before pin/unpin (10 is pretty nice, I find)
-			//var hr = new Headroom($('nav')[0]);
-			var hr = new Headroom($('#nav-contain')[0]);
-			hr.init();
-			// since headroom has to be fixed, compensate the page element offset, adding one em
-			var offset = $('nav').height() + parseFloat($("body").css("font-size"));
-			//$('.page').first().css('padding-top', offset);
 			// fix service icon width
 			$('.service-icon').css('height', $('.service-icon').width());
 			// setup the slick carousel

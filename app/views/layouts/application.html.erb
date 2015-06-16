@@ -103,6 +103,11 @@
 				for (var i = 0; i < divs.length; i++) {
 					//divs[i].className = "columns small-12";
 				}
+				// setup the headroom menu
+				Headroom.options.offset = 0; // how far down until we start the hiding feature
+				Headroom.options.tolerance = 5; // how many px to allow before pin/unpin (10 is pretty nice, I find)
+				var hr = new Headroom($('#nav-contain')[0]);
+				hr.init();
 			</script>
 		</div><!-- end footer -->
 		<!-- google analytics -->

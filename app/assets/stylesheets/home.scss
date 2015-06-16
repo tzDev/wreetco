@@ -157,6 +157,15 @@ background colors behave.
 	position: absolute;
 }
 
+.blog {
+	background-color: #fff;
+	min-height: 500px;
+}
+
+.blog h4 {
+	color: $overlay_bg;
+}
+
 .blog_post {
 	margin-bottom: 2em;
 }

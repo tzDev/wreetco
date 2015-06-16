@@ -1,18 +1,25 @@
-<p id="notice"><%= notice %></p>
-
-<div class="page row">
-	<div class="medium-8 small-12 column">
-		<% @blog_posts.to_a.each() do |post| %>
-			<%= render 'post', :post => post %>
-			
-		<% end %>
-	</div>
-	<div class="medium-4 column show-for-medium-up" style="margin-top: .5em;">
-		<h4>Top/Featured</h3>
-		<%= render 'featured_stories' %>
-		<%= render 'top_tags' %>
+<% if notice %>
+	<p id="notice"><%= notice %></p>
+<% end %>
+<div class="page blog">
+	<div class="row">
+		<div class="medium-8 small-12 column">
+			<% @blog_posts.to_a.each() do |post| %>
+				<%= render 'post', :post => post %>
+			<% end %>
+		</div>
+		<div class="medium-4 column show-for-medium-up" style="margin-top: .5em;">
+			<h4>Top/Featured</h3>
+			<%= render 'featured_stories' %>
+			<%= render 'top_tags' %>
+		</div>
 	</div>
 </div>
-
 <br />
 <%= if current_user then link_to 'New Blog post', new_blog_post_path end %>
+
+<script>
+	// since headroom has to be fixed, compensate the page element offset, adding one em
+	var offset = $('nav').height() + parseFloat($("body").css("font-size"));
+	$('.page').first().css('padding-top', offset);
+</script>
