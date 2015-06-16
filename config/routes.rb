@@ -8,8 +8,13 @@ Rails.application.routes.draw do
 	match "/project", to: "project#index", :via => 'get'
 	match "/project/list", to: "project#getProjects", :via => 'get'
 	match "/get_contacts", to: "contact#get_contacts", :via => 'post'
-
+	
+	get "/contact", to: redirect('/#contact', status: 301)
+	
 	resources :contact
+	
+	
+	
   resources :blog_posts, :path => 'blog'
 	# we want to do the tags here, I know we should have had another controller
 	# but my inexperience with mongo made it difficult
