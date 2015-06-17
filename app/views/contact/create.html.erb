@@ -1,14 +1,22 @@
-<div class="row page">
-	<div class="columns small-9">
-		<h1>Thank You!</h1>
-		<p>
-			Your message has been received and will be answered promptly!
-		</p>
-		<p>
-			-wreetco development team
-		</p>
-	</div>
-	<div class="columns small-3">
-		<!-- wreetco LOGO -->
-	</div>
-</div><!-- end row -->
+<div class="blog">
+	<div class="row page">
+		<div class="columns small-9">
+			<h2 style="color: #011722; text-transform: none;">Thank You!</h2>
+			<br />
+			<p>
+				Your message has been received and will be answered promptly!
+			</p>
+			<p>
+				-wreetco dev team
+			</p>
+		</div>
+		<div class="columns small-3">
+			<!-- wreetco LOGO -->
+		</div>
+	</div><!-- end row -->
+</div>
+<script>
+	// since headroom has to be fixed, compensate the page element offset, adding one em
+	var offset = $('nav').height() + parseFloat($("body").css("font-size"));
+	$('.page').first().css('padding-top', offset);
+</script>
