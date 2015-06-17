@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require headroom.min
+//= require getEmPixels.min
 
 $(function(){ $(document).foundation(); });
 
