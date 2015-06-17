@@ -2,7 +2,7 @@
 	<ul class="side-nav sidebar">
 		<% top_posts.to_a.each() do |p| %>
 		<li>
-			<a href="#"><%= p.title %></a>
+			<a href="/blog/<%= p.slug %>"><%= p.title %></a>
 			<span class="date"><%= p.posted_date.to_s(:us_date) %></span>
 		</li>
 		<% end %>

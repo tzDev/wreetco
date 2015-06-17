@@ -170,8 +170,8 @@ background colors behave.
 	margin-bottom: 2em;
 }
 
-.blog_post h2 {
-	color: $headers !important;
+.blog_post h3 a {
+	color: $overlay_bg !important;
 }
 
 .full-width {
@@ -277,8 +277,8 @@ background colors behave.
 
 }
 
-.page a, .page a:visited {
-	color: $headers;
+.page a:link, .page a:visited {
+	color: $highlights;
 }
 
 .page a:hover {
@@ -317,7 +317,7 @@ background colors behave.
 .sidebar li {
 	padding-bottom: .5em;
 	font-size: 1.5em !important;
-	border-bottom: 1px solid $headers;
+	border-bottom: 1px solid $overlay_bg;
 }
 
 .sidebar li:hover {
@@ -325,8 +325,12 @@ background colors behave.
 	border-bottom: 1px solid $highlights;
 }
 
+.sidebar li a:hover {
+	color: $overlay_bg !important;
+}
+
 .sidebar li a:not(:hover) {
-	color: $headers !important;
+	color: $overlay_bg !important;
 }
 
 .sidebar li a:hover {
