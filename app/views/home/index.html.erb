@@ -1,7 +1,7 @@
 <div class="page">
 	<div id="splash-container">
 	<div class="row splash">
-		<div class="small-12 columns valign">
+		<div class="small-12 columns valign" id="splash-content">
 			<h1>Responsive design</h1>
 			<br />
 			<h1>Mobile apps</h1>
@@ -255,7 +255,16 @@
 		}, // end setup
 		
 		match: function() {
-			// onload stuff for small screens
+			// match onload for small screens
+			var offset = $('nav').height() + getEmPixels($('#splash-content').children()[0]);
+			$('.valign').removeClass('valign');
+			$('.page').first().css('padding-top', offset);
+			// get size of an em in the splash
+			var em = getEmPixels($('#splash-content').children()[0]);
+			// get height of the rendered splash div
+			var height = $('#splash-content').height();
+			// let's make the container tall enough
+			$('.splash').css('height', height + (em * 3));
 		}, // end match
 		
 		unmatch: function() {
@@ -268,9 +277,21 @@
 			// onload stuff for big screens
 		},
 		
+		// this query is specific to devices like iphone that report a small screen size
 		unmatch: function() {
 			// will be executed in addition to the match query on the other instance
 		}
 	});
+	
+	// for jumbo screens
+	enquire.register("screen and (min-width: 100em)", {
+		match: function() {
+			$('html, body').css('font-size', '20px');
+		}
+	});
 
 </script>
+
+
+
+
