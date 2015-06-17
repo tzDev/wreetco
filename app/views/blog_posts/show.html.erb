@@ -1,9 +1,19 @@
-<p id="notice"><%= notice %></p>
-<div class="row page">
-	<div class="small-12 medium-9 columns">
-		<%= render 'post', :post => @blog_post %>
+<% if notice %>
+	<p id="notice"><%= notice %></p>
+<% end %>
+<div class="page blog">
+	<div class="row">
+		<div class="small-12 medium-9 columns">
+			<%= render 'post', :post => @blog_post %>
+		</div>
 	</div>
+
+	<br />
+	<%= if current_user then link_to 'Edit', edit_blog_post_path(@blog_post) end %>
 </div>
 
-<br />
-<%= if current_user then link_to 'Edit', edit_blog_post_path(@blog_post) end %>
+<script>
+	// since headroom has to be fixed, compensate the page element offset, adding one em
+	var offset = $('nav').height() + parseFloat($("body").css("font-size"));
+	$('.page').first().css('padding-top', offset);
+</script>
