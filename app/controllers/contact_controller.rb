@@ -26,7 +26,7 @@ class ContactController < ApplicationController
 		ContactMailer.contact_email_client(params[:contact]).deliver_now;
 		# send an alert to slack
 		begin
-			Slack::SlackMessage.new.sendMessage(SLACK_WEBHOOK)
+			Slack::SlackMessage.new.sendMessage(SLACK_WEBHOOK, params[:contact][:first_name], params[:contact][:last_name], params[:contact][:subject])
 		rescue
 			puts "[-] Could not post message to Slack."
 		end

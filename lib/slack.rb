@@ -8,7 +8,8 @@ module Slack
 			}
 		end # end constructor
 		
-		def sendMessage(slack_hook)
+		def sendMessage(slack_hook, first, last, subject)
+			@payload_template[:text] += "Name: #{first} #{last} Interest: #{subject}";
 			uri = URI(slack_hook);
 			http = Net::HTTP.new(uri.host, uri.port)
 			http.use_ssl = true
