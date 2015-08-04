@@ -1,49 +1,44 @@
-<div class="page">
+<div class="page" id="skrollr-body">
 	<div id="splash-container">
-	<div class="row splash">
-		<div class="small-12 columns valign" id="splash-content">
-			<h1>Responsive design</h1>
-			<br />
-			<h1>Mobile apps</h1>
-			<br />
-			<h1>Web apps</h1>
-		</div>
+		<div class="row splash">
+			<div class="small-12 columns" id="splash-content">
+				<ul class="accordion" data-accordion>
+					<li class="accordion-navigation">
+						<a href="#responsive-design">Responsive Web Design</a>
+						<div id="responsive-design" class="content active">
+							We utilize the latest responsive design techniques to ensure your website maintains a consistent design 
+							philosophy regardless of device or screen size. You'll be ready for your customers no matter how they 
+							choose to interact with your website.
+						</div>
+					</li>
+					<li class="accordion-navigation">
+						<a href="#mobile-apps">Mobile Apps</a>
+						<div id="mobile-apps" class="content">
+							A mobile app can help your product or service reach a broader audience. Users often check on the app store 
+							before searching online, and many established brands now have a presence on the major app markets.
+						</div>
+					</li>
+					<li class="accordion-navigation">
+						<a href="#web-apps">Web Apps</a>
+						<div id="web-apps" class="content">
+							We take advantage of the latest development tools and frameworks like Ruby on Rails and AngularJS to create 
+							rich, interactive web applications and have experience with a wide variety programming languages and tools.
+						</div>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 
-	<div class="full-width services">
+	<div class="full-width services" data-0="background-position: 0px -125px;" data-end="background-position: 0px 125px;">
 		<div class="splash_arrow">&nbsp;</div>
 		<div class="row">
-			<div class="small-12 medium-4 columns">
-				<div class="service-icon text-center">
-					<img src="/assets/responsive-icon.png">
-				</div>
-				<h4>Responsive Web Design</h4>
-				<p>
-					We utilize the latest responsive design techniques to ensure your website maintains a consistent 
-					design philosophy regardless of device or screen size. You'll be ready for your customers no matter 
-					how they choose to interact with your website.
-				</p>
-			</div>
-			<div class="small-12 medium-4 columns">
-				<div class="service-icon text-center">
-					<img src="/assets/mobile_app.png">
-				</div>
-				<h4>Mobile Apps</h4>
-				<p>
-					A mobile app can help your product or service reach a broader audience. Users often check on the app store 
-					before searching online, and many established brands now have a presence on the major app markets.
-				</p>
-			</div>
-			<div class="small-12 medium-4 columns">
-				<div class="service-icon text-center">
-					<img src="/assets/html.png">
-				</div>
-				<h4>Web Apps</h4>
-				<p>
-					We take advantage of the latest development tools and frameworks like Ruby on Rails and AngularJS to create rich, 
-					interactive web applications and have experience with a wide variety programming languages and tools. 
-				</p>
+			<div class="columns small-12 text-center" data-0="top: 0px;" data-end="top: -150px;">
+				<h2 class="theaction" style="letter-spacing: 5px; font-weight: 400;">
+					Web and app
+				</h2>
+				<h4 class="theaction">Development and design</h4>
+				<a href="javascript:scrollTo('#contact');" class="button radius" id="cta_button">Contact Us</a>
 			</div>
 		</div>
 	</div>
@@ -256,6 +251,7 @@
 		
 		match: function() {
 			// match onload for small screens
+			/*
 			var offset = $('nav').height() + getEmPixels($('#splash-content').children()[0]);
 			$('.valign').removeClass('valign');
 			$('.page').first().css('padding-top', offset);
@@ -265,6 +261,7 @@
 			var height = $('#splash-content').height();
 			// let's make the container tall enough
 			$('.splash').css('height', height + (em * 3));
+			*/
 		}, // end match
 		
 		unmatch: function() {
@@ -275,11 +272,17 @@
 	enquire.register("screen and (min-width: 40em)", {
 		match: function() {
 			// onload stuff for big screens
+			skrollr.init({
+				forceHeight: false
+			});
 		},
 		
 		// this query is specific to devices like iphone that report a small screen size
 		unmatch: function() {
 			// will be executed in addition to the match query on the other instance
+			// undo the full-width menu not having any effect on layout height
+			$('.splash').css('padding', '0 0 2em 0;');
+			skrollr.get().destroy();
 		}
 	});
 	
@@ -289,7 +292,7 @@
 			$('html, body').css('font-size', '20px');
 		}
 	});
-
+	
 </script>
 
 

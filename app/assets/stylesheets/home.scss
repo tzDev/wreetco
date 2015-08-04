@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "foundation/functions";
+
 $headers: #195962;
 $overlay_bg: #011722;
 $offwhite: #DFE5CE;
@@ -11,6 +13,7 @@ $text: #191C21;
 html, body {
 	font-color: $text;
 	background-color: $overlay_bg!important;
+	font-family: "Roboto" !important;
 }
 
 .top-bar .name h1 a:hover {
@@ -48,6 +51,44 @@ h1, h2, h3, h4 {
 	text-transform: uppercase;
 }
 
+ul.accordion {
+	margin-left: 0 !important;	
+}
+
+.accordion .accordion-navigation > a:hover, .accordion dd > a:hover {
+	background: transparent;
+	border-bottom: 0;
+}
+
+.accordion .accordion-navigation > a, .accordion dd > a {
+	color: white !important;
+	background: transparent;
+	text-transform: uppercase;
+	font-size: 2.5em;
+	line-height: 1em;
+	font-weight: 300;
+}
+
+.accordion .accordion-navigation.active > a, .accordion dd.active > a {
+	background: transparent !important;	
+	transition: background .1s linear;
+}
+
+.accordion .accordion-navigation .content {
+	color: #fff;
+	font-size: 1.33em;
+	font-weight: 100;
+	font-family: "Roboto";
+	background-color: transparent !important;	
+	//border: 1px solid red;
+	border-left: 3px solid #F56F6C;
+	margin-left: 1em;
+	line-height: 1.5em;
+	padding: .5em;
+	padding-left: 1em;
+	width: 55%;
+}
+
 .sidebar h3 {
 	color: $overlay_bg !important;
 }
@@ -76,7 +117,8 @@ h1, h2, h3, h4 {
 }
 
 .splash {
-	height: 70vh;
+	//height: 70vh;
+	padding: rem-calc(50) 0 2em 0;
 }
 
 #scroll_arrow:hover {
@@ -146,6 +188,7 @@ background colors behave.
 	position: relative;
 }
 
+/*
 #splash-container::after {
 	content: "";
 	//background: url(/assets/splash_bg.png);
@@ -156,6 +199,7 @@ background colors behave.
 	right: 0;
 	position: absolute;
 }
+*/
 
 .blog {
 	background-color: #fff;
@@ -184,18 +228,39 @@ background colors behave.
 .splash_arrow {
 	width: 0; 
 	height: 0; 
-	border-left: 12.5vw solid transparent;
-	border-right: 12.5vw solid transparent;
-	border-top: 10vw solid $overlay_bg;
+	border-left: 9vw solid transparent;
+	border-right: 9vw solid transparent;
+	border-top: 9vw solid $overlay_bg;
 	margin: 0 auto;
-	margin-bottom: 2em;
+	margin-bottom: 5em;
 }
 
 .services {
 	background-color: #fff;
-	//min-height: 50vh;
-	padding-bottom: 2em;
+	padding-bottom: 5em;
 	z-index: 2;
+	background-image: url(/assets/denver.jpg);
+	//background-size: 100% 133%;
+	background-repeat: no-repeat;
+	//height: 500px;
+	transform: translate3d(0, 0, 1px);
+	color: #fff;
+}
+
+@media screen and (max-width: 40em) {
+	.services {
+		background-size: cover;	
+	}
+	
+	.accordion .accordion-navigation .content {
+		width: 100%;	
+	}
+}
+
+@media screen and (min-width: 40em) {
+	.services {
+		background-size: 100% 133%;	
+	}
 }
 
 .service-icon {
@@ -354,6 +419,29 @@ background colors behave.
 
 .contact_text p {
 	text-align: justify;
+}
+
+#cta_button {
+	text-transform: uppercase;
+	color: #fff;
+	background-color: rgba(1,23,34, .6);
+	border: 1px solid rgba(1, 23, 34, .9);
+	font-size: 2em;
+	padding: 1em 1.5em;
+	margin-top: 2em;
+}
+
+#cta_button:hover, #cta_button:active {
+	background-color: rgba(1,23,34, 1);
+	border-bottom: 1px solid $highlights;
+}
+
+.theaction {
+	position: relative;
+	text-transform: uppercase;
+	color: #fff !important;
+	font-weight: lighter;
+	text-shadow: 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .headroom {position: fixed;top: 0;left: 0;right: 0;transition: all .2s ease-in-out; z-index: 99;}

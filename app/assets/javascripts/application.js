@@ -70,18 +70,24 @@ function removeTransitions() {
 }
 
 // scroll
+
 	function scrollTo(element) {
 		// kill all the waypoints on the page to make the scroll smooth
-		$('html, body').animate({
-			scrollTop: $(element).offset().top
-		}, 1000);
+		try {
+			$('html, body').animate({
+				scrollTop: $(element).offset().top
+			}, 1000);
+		}
+		catch (e) {
+			// skrollr ruined it	
+		}
 		// now fix the waypoints
+		/*
 		setTimeout(function() {
 			location.hash = element.replace('#', '');
 		}, 1000); // give the animation plenty of time to finish
+		*/
 	} // end scrollTo function
 
-	
-	
 	
 	
